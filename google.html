@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const myInstance = new Set();
+
+      console.log(myInstance.add(1));
+      console.log(myInstance.add(2));
+      let c = myInstance.add(6);
+      console.log(c);
+      console.log(c.size); //3
+      console.log("c", typeof c);
+      console.log(myInstance.has(2)); //true
+
+      b = [1, 2, 4];
+      // console.log(typeof b);
+
+      var numUniqueEmails = function (emails) {
+        // debugger;
+        const set = new Set();
+
+        for (const email of emails) {
+          const arr = email.split("@");
+          // console.log("arr", arr); //['sf.ga+4', 'leetcode.com']
+
+          // ignore everything after first occurence of +
+          arr[0] = arr[0].split("+")[0]; // sf.ga
+          //console.log("arr[0]", arr[0]);
+
+          // replace all dots with nothing i.e. empty string
+          arr[0] = arr[0].replace(/\./g, ""); ////sfga
+          //console.log("arr0", arr[0]);
+          console.log("array", arr);
+          console.log(arr.join("@"));
+
+          // add final email ( processed ) to set
+          set.add(arr.join("@"));
+        }
+
+        return set.size;
+      };
+      emails = [
+        "sf.ga+4@leetcode.com",
+        "b.gafa+22afs@leetcode.com",
+        "c.dgfa+341vd@leetcode.com",
+      ];
+      abc = [
+        "sf.ga+4@leetcode.com",
+        "b.gafa+22afs@leetcode.com",
+        "c.dgfa+341vd@leetcode.com",
+      ];
+      for (let ab of abc) {
+        console.log("ab", ab);
+        // let amk = ab[0];
+        // console.log("a", amk);
+      }
+
+      console.log(numUniqueEmails(emails));
+      /*
+      Input: s = "5F3Z-2e-9-w", k = 4
+      Output: "5F3Z-2E9W"
+      Explanation: The string s has been split into two parts, each part has 4 characters.
+      Note that the two extra dashes are not needed and can be removed.
+
+      Input: s = "2-5g-3-J", k = 2
+      Output: "2-5G-3J"
+      Explanation: The string s has been split into three parts, each part has 2
+       characters except the first part as it could be shorter as mentioned above.
+      */
+      // let s = "5F3Z-2e-9-w";
+
+      // console.log(s.replace(/\-/g, ""));
+
+      var licenseKeyFormatting = function (str, k) {
+        str = str
+
+          // Remove the white spaces
+          .trim()
+
+          // Replace all the special
+          // characters with ""
+          .replace(/[^a-zA-Z0-9]/g, "")
+
+          // Transform the string into
+          // uppercase characters
+          .toUpperCase()
+
+          // Convert the string into array
+          .split("");
+
+        // Store the length of the
+        // array into len
+        let len = str.length;
+        for (let i = len; i > 0; i = i - k) {
+          if (i != len) {
+            // Concatenate the string with "-"
+            str[i - 1] = str[i - 1] + "-";
+          }
+        }
+
+        //  Join the array to make it a string
+        return str.join("");
+      };
+      console.log(licenseKeyFormatting("dsf354g4dsg1", 4));
+      console.log(licenseKeyFormatting("d-sf354g40ds-gsfgf-sfdds65-46", 6));
+    </script>
+  </body>
+</html>

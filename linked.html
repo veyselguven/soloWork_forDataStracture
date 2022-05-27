@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+                            https://cokyamanmuhammet.medium.com/javascript-ile-linkedlist-1-ffc29607fd20
+                           */
+      class Node {
+        constructor(value, next = null) {
+          this.value = value;
+          this.next = next;
+        }
+      }
+
+      //   let x = new Node();
+      //   x.next = 2;
+      //   x.value = 3;
+      //   console.log(x); //Node {value: 3, next: 2}
+
+      class LinkedList {
+        constructor() {
+          this.head = null;
+          this.tail = null;
+          this.length = 0;
+        }
+        //listenin sonuna eleman ekleme
+        push(value) {
+          const node = new Node(value);
+          if (!this.head) {
+            this.head = node;
+            this.tail = node;
+          } else {
+            this.tail.next = node;
+            node.next = null;
+            this.tail = node;
+          }
+          this.length++;
+          return this;
+        }
+        // listenin sonundan eleman silme
+        pop() {
+          let deletedTail = this.tail;
+          if (this.length === 0) return null;
+          if (this.head === this.tail) {
+            this.head = null;
+            this.tail = null;
+            return deletedTail;
+          }
+          let currentNode = this.head;
+          while (currentNode.next !== null) {
+            // daha sonra son elemana ulasincaya kadar son next leri
+            // currentNode a atadi.
+            currentNode = currentNode.next;
+          }
+          this.tail = currentNode;
+          this.length--;
+          return deletedTail;
+        }
+        //unshift listenin basina eleman ekleme
+        unshift(value) {
+          let node = new Node(value);
+          if (this.head === nul) {
+            this.head = node;
+            this.tail = node;
+          } else {
+            node.next = this.head;
+            this.head = node;
+          }
+          this.length++;
+          return this;
+        }
+        // shift(Listenin basindan eleman silmek)
+        shif() {
+          if (!this.head) {
+            return null;
+          }
+          let currentHead = this.head;
+          this.head = this.currentHead.next;
+          // yukarida orjinal hedi bir sonraki next yaptik
+          this.length--;
+          if (this.length === 0) {
+            this.tail = null;
+          }
+          return currentHead;
+        }
+        // get(listenin secilmis degerini donmek)
+        get(index) {
+          // oncelikle verilen dizinin sifirdan buyuk ve listenin
+          //uzunlugundan kucuk veya ona esit oldugundan emin olun.
+          // daha sonra dizine ulasana kadar listeyi gozden geciririz.
+          if (index < 0 || index >= this.length) return null;
+          let counter = 0;
+          let current = this.head;
+          while (counter !== index) {
+            current = current.next;
+            counter++;
+          }
+          return current;
+        }
+        // set(listenin secilmis degerine degisken atamak)
+        // Listemizdeki bir dugumu (node) degistirmek istersek ne olur?
+        // dugumu get() ile buluyoruz ve dugumu (node) verilen
+        // verilerle ayarliyoruz.
+        set(index, value) {
+          let node = this.get(index);
+          if (node) {
+            node.value = value;
+            return true;
+          }
+          return false;
+        }
+        // insert(listenin secilmis indexin degisken atamak);
+        /*
+                  Listeye yeni bir düğüm(node) eklemek istediğimizde,
+                  önce indeksin 0'dan büyük ve uzunluktan küçük olup olmadığını
+                  kontrol edin. İndeks uzunluksa,
+                  sadece push() kullanıyoruz, indeks 0 ise, unshift() kullanıyoruz.
+                    */
+
+        insert(index, value) {
+          if (index < 0 || index > this.length) return null;
+          if (index === this.length) {
+            this.push(value);
+            return true;
+          }
+          if (index === 0) {
+            this.unshift(value);
+            return true;
+          }
+          //Listeye eklenecek deger(new node) olusturuluyor
+          let node = new Node(value);
+          //Listeye eklenecek degerden once gelen
+          // degsiken tanimi (!next ifadesini kullanacagimizdan
+          // get cagirdik)
+          let pre_node = this.get(index - 1);
+          let aft_node = pre_node.next;
+          node.next = aft_node;
+          pre_node.next = node;
+          this.length++;
+          return true;
+        }
+        // remove(listenin secilmis degerini kaldiriyoruz)
+        //Pop() ve Unshift() ’in aksine, remove() işlevi
+        //düğümü verilen index değerine göre kaldırma işlemi yapar
+        remove(index) {
+          if (index < 0 || index > this.length) return null;
+          if (index === 0) return this.shift();
+          if (index === this.length - 1) return this.pop();
+          let prev = this.get(index - 1);
+          let removed = prev.next;
+          prev.next = removed.next;
+          this.length--;
+          return removed;
+        }
+        //
+        // reverse(Listenin secilmis degerini kaldriyoruz)
+        reverse() {
+          debugger;
+          let node = this.head;
+          let temp;
+
+          let prev = null;
+          // 1->2->3->4->5->null
+          // \->null
+          while (node) {
+            temp = node.next; //2
+            node.next = prev; //null
+            prev = node; //2 this.head
+            node = temp; //2
+          }
+          this.tail = this.head;
+          this.head = prev;
+          return this;
+        }
+        //getLast(Listenin son eleman alma)
+        getLast() {
+          if (!this.head) return null;
+          let lastNode = this.head;
+          while (lastNode) {
+            if (!lastNode.next) return lastNode;
+            lastNode = lastNode.next;
+          }
+          return lastNode;
+        }
+        // GetFirst — Clear — Size ( Listenin Ilk Eleman ı— Temizleme — Boyutu Dönmek)
+
+        getFirst() {
+          return this.head;
+        }
+
+        clear() {
+          this.head = null;
+        }
+
+        size() {
+          let count = 0;
+          let currentNode = this.head;
+          while (currentNode) {
+            count++;
+            currentNode = currentNode.next;
+          }
+          return count;
+        }
+      }
+
+      /*
+
+
+
+
+
+
+
+
+       */
+
+      /* var reverseList = function (head) {
+              // empty or only one node
+              if (head === null || head.next === null) return head;
+
+              let newHead = new ListNode();
+              let next = new ListNode();
+              while (head !== null) {
+                // next helper create
+                next = head.next;
+                // disconnect, and point to newHead.next
+                head.next = newHead.next;
+                // move newHead.next to head
+                newHead.next = head;
+                // move head to next location
+                head = next;
+              }
+              return newHead.next;
+            }; */
+      var reverseList = function (head) {
+        let previous = null;
+        let current = head;
+        while (current) {
+          const next = current.next;
+          current.next = previous;
+          previous = current;
+          current = next;
+        }
+        return previous;
+      };
+    </script>
+  </body>
+</html>

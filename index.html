@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+     stringPermutations('one')                     // should return  [ 'eno', 'eon' 'neo', 'noe', 'oen', 'one']
+       stringPermutations('app');
+                           // should return  [ 'app','pap','ppa']
+                           stringPermutations('nn');
+                           //should return  [ 'nn' ]
+     */
+
+      // const stringPermutation = (string) => {
+      //   if (string.length === 1) return [string];
+      //   const results = [];
+      //   let i = 0;
+
+      //   while (i < string.length) {
+      //     const letter = string[i];
+      //     console.log(letter);
+      //     const otherLetters = string.slice(0, i) + string.slice(i + 1);
+      //     console.log(otherLetters);
+      //     stringPermutation(otherLetters).forEach((sublet) =>
+      //       results.push(letter + sublet)
+      //     );
+      //     while (string[i] === letter) i++;
+      //   }
+      //   return results.sort();
+      // };
+
+      // console.log(stringPermutation("cat"));
+
+      // class Node {
+      //   constructor(value) {
+      //     this.value = value;
+      //     this.next = null;
+      //     this.previous = null;
+      //   }
+      // }
+
+      // class GitHubUser {
+      //   constructor(username, bilingPlan = "free") {
+      //     this.username = username;
+      //     this.bilingPlan = bilingPlan;
+      //     this.repositories = [];
+      //   }
+      //   addSomething(value) {
+      //     const newTail = new Node(value);
+      //     this.username = newTail;
+      //   }
+      //   createRepository(name) {
+      //     this.repositories.push({ name });
+      //   }
+
+      //   editBilingPlan(name) {
+      //     this.bilingPlan = plan;
+      //   }
+      // }
+
+      // const x = new GitHubUser("veysel");
+      // //x.createRepository("Alex");
+      // console.log(x);
+      // console.log(Object.keys(x));
+      // const y = new Node("veysel");
+      // y.next = "asdsf";
+      // y.previous = new Node("sdfdefs");
+      // y.previous.next = "asdfdbdefgd";
+      // y.previous.previous = "adfsgbdfhnhgfddf";
+      // console.log(y);
+      //console.log(x.addSomething("asdf"));
+
+      // const a = { a: 1, b: 2, c: 3 };
+
+      // c = new Array(a);
+
+      // console.log(c);
+
+      // let array = [
+      //   { id: 6, time: "00:09:49", aliens: 22, motherships: 1, level: 2 },
+      //   { id: 1, time: "00:07:12", aliens: 10, motherships: 2, level: 1 },
+      //   { id: 1, time: "00:07:12", aliens: 10, motherships: 2, level: 2 },
+      //   { id: 1, time: "00:07:12", aliens: 10, motherships: 2, level: 3 },
+      // ];
+
+      // console.log(array[0].level);
+
+      // function abc(array) {
+      //   let result = [];
+      //   for (let i = 0; i < array.length - 1; i++) {
+      //     for (let j = i + 1; i < array.length - 1; j++) {
+      //       if (array[i].level === array[j].level) {
+      //         i = new Array(array[i]);
+      //         result.push(i);
+      //       } else if (array[i].level !== array[j].level) {
+      //         i = new Array(array[i]);
+      //         result.push(i);
+      //       }
+      //     }
+      //   }
+      //   return result;
+      // }
+
+      // console.log(abc(array));
+
+      //       const reverseWords=(str)=>{
+      // return
+      //       }
+
+      //"This is an example!" ==> "sihT si na !elpmaxe"
+
+      // const veysel = () => {
+      //   react();
+      //   redux();
+      //   nodejs();
+      //   express();
+      //   postgresSQL();
+      //   sequelize();
+      // };
+      // while (veysel.isNotSleeping()) {
+      //   veysel();
+      // }
+
+      // function isIsogram(str) {
+      //   let str2 = str.toLowerCase();
+      //   for (let i = 0; i < str2.length; i++) {
+      //     for (let j = i + 1; j < str2.length; j++) {
+      //       if (str2[i] !== str2[j]) return true;
+      //     }
+      //   }
+      //   return false;
+      // }
+
+      // console.log(isIsogram("moOse"));
+
+      // const multiplicationTable = (n) => {
+      //   const res = [];
+      //   for (let i = 1; i <= 3; i++) {
+      //     // debugger;
+      //     const row = [];
+      //     for (let j = 1; j <= 3; j++) row.push(i * j);
+      //     res.push(row);
+      //   }
+      //   return res;
+      // };
+      // console.log(multiplicationTable(3));
+      // /*
+      // [
+      // [1,2,3],
+      // [2,4,6],
+      // [3,6,9]
+      // ]
+      // */
+      let students = [
+        {
+          id: 123,
+          name: "alex",
+        },
+        {
+          id: 785,
+          name: "hrr",
+        },
+        {
+          id: 456,
+          name: "asdf",
+        },
+      ];
+      let alexx = [1, 4, 2, 45, 3];
+      for (let a in alexx) {
+        console.log(alexx[a]);
+      }
+      console.log(Object.keys(students));
+
+      function getElementById(id) {
+        for (let i = 0; i < students.length; i++) {
+          let currentId = students[i].id;
+
+          if (currentId === id) return students[i].name;
+        }
+      }
+
+      let kkk = "veyselguven";
+
+      console.log([...kkk]);
+
+      // function getElementById() {
+      //   for (let keys in students) {
+      //     console.log(students[keys]);
+      //     //if (student.id === id) return student.name;
+      //   }
+      // }
+      // console.log(getElementById());
+      //console.log(getElementById(456));
+      class Node {
+        constructor(value) {
+          this.value = value;
+          this.left = null;
+          this.right = null;
+        }
+      }
+      // let abc = new Node("naber");
+      // console.log(abc);
+
+      class BST {
+        constructor() {
+          this.root = null;
+        }
+        create() {}
+      }
+
+      let veysell = [5, 3, 5];
+      for (let i of veysell) {
+        console.log("i", i);
+      }
+    </script>
+  </body>
+</html>

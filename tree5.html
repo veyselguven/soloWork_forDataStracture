@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var peakIndexInMountainArray = function (arr) {
+        // debugger;
+        let left = 0;
+        let right = arr.length - 1;
+        while (left < right) {
+          let mid = Math.floor((left + right) / 2); // Math.floor(left + (right - left)/2);
+          if (arr[mid] < arr[mid + 1]) left = mid + 1;
+          else right = mid;
+        }
+        return left;
+      };
+      console.log(peakIndexInMountainArray([0, 2, 4, 6, 5, 4, 3]));
+
+      var licenseKeyFormatting = function (s, k) {
+        var reformattedLicenseKey = "";
+        const tmpFormattedString = s.replaceAll("-", "").toUpperCase();
+
+        var lenFirstGroup =
+          tmpFormattedString.length % k === 0
+            ? k
+            : tmpFormattedString.length % k;
+
+        reformattedLicenseKey = tmpFormattedString.substring(0, lenFirstGroup);
+
+        for (
+          index = lenFirstGroup;
+          index < tmpFormattedString.length;
+          index += k
+        ) {
+          reformattedLicenseKey +=
+            "-" + tmpFormattedString.substring(index, index + k);
+        }
+        return reformattedLicenseKey;
+      };
+
+      var licenseKeyFormatting = function (S, K) {
+        const characters = S.split("-").join("").toUpperCase();
+
+        var i = characters.length - 1,
+          k = K,
+          output = "";
+        while (i >= 0) {
+          output += characters[i];
+          if (i-- > 0 && --k === 0) {
+            output += "-";
+            k = K;
+          }
+        }
+
+        return output.split("").reverse().join("");
+      };
+    </script>
+  </body>
+</html>

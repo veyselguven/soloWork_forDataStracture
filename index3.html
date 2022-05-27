@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var threeSum = function (nums) {
+        if (!nums.length || nums.length === 1) return [];
+
+        let result = [];
+        for (let i = 0; i < nums.length; i++) {
+          for (let j = i + 1; j < nums.length; j++) {
+            if (nums[i] + nums[j] + nums[j + 1] === 0) {
+              result.push([nums[i], nums[j], nums[j + 1]]);
+            }
+          }
+        }
+        return result;
+      };
+      console.log(threeSum([-1, 0, 1, 2, -1, -4]));
+    </script>
+  </body>
+</html>

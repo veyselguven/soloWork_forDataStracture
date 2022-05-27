@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   var canBeIncreasing = function (nums) {
+      //     let isRemove = false;
+
+      //     for (let i = 1; i < nums.length; i++) {
+      //       const currNum = nums[i];
+
+      //       if (currNum <= nums[i - 1]) {
+      //         console.log("cur", currNum);
+      //         if (isRemove) return false;
+      //         if (i > 1 && currNum <= nums[i - 2]) {
+      //           nums[i] = nums[i - 1];
+      //         }
+      //         isRemove = true;
+      //       }
+      //     }
+      //     return true;
+      //   };
+
+      //   console.log(canBeIncreasing([1, 2, 10, 5, 7]));
+      // const x = 123;
+
+      // console.log(x.toString().split(""));
+      var removeDuplicates = function (nums) {
+        let result = 0;
+        for (let i = 0; i < nums.length; i++) {
+          //debugger;
+          if (nums[i] !== nums[i + 1]) {
+            nums[result] = nums[i];
+            result++;
+          }
+        }
+        return result;
+      };
+
+      console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
+      // var removeElement = function (nums, val) {
+      //   let result = [];
+      //   for (let i = 0; i < nums.length; i++) {
+      //     if (nums[i] !== val) {
+      //       result.push(nums[i]);
+      //     }
+      //   }
+      //   return result;
+      // };
+
+      // console.log(removeElement([3, 2, 2, 3], 3));
+      function removeElement(nums, val) {
+        //debugger;
+        for (let i = nums.length - 1; i >= 0; i--) {
+          if (nums[i] === val) {
+            nums.splice(i, 1);
+          }
+        }
+        return nums.length;
+      }
+      //console.log(removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2));
+      var lengthOfLastWord = function (s) {
+        let array = s.split(" "); //["Hello", "World"]
+        console.log(array);
+        let max = array[array.length - 1];
+        console.log("max", max);
+        for (let i = 0; i < array.length; i++) {
+          if (array[i].length > max) max = s[i];
+        }
+        return max;
+      };
+      lengthOfLastWord("Hello World");
+
+      // var sikko = [1, 2, 4, 5];
+      // let ab = sikko.join("");
+      // console.log(ab);
+      // let num = Number(ab);
+      // let arraya = num.toString();
+      // console.log(typeof arraya);
+      // console.log("ASDFa", arraya.split(" "));
+      // console.log("a", num);
+
+      var plusOne = function (digits) {
+        let result = [];
+        //debugger;
+        let str = digits.join("");
+        let num = Number(str) + 1;
+        /* console.log("num", typeof num);
+                    console.log(num); */
+        let array = num.toString();
+        //console.log("array", typeof array);
+
+        for (let i = 0; i < array.length; i++) {
+          let element = Number(array[i]);
+          //console.log(element);
+          result.push(element);
+        }
+        return result;
+      };
+      // plusOne([4, 3, 2, 1]);
+
+      /* console.log(
+                    plusOne([6, 1, 4, 5, 3, 9, 0, 1, 9, 5, 1, 8, 6, 7, 0, 5, 5, 4, 3])
+                  ); */
+      console.log(plusOne([4, 3, 2, 1]));
+
+      const obj1 = { a: 1 };
+      const obj2 = { b: 2 };
+      const obj3 = Object.assign({}, obj1, obj2);
+      console.log(obj3);
+      const Person = {
+        name: "Rezaul karim",
+        age: 23,
+        sex: "male",
+        maritalstatus: "single",
+        address: {
+          country: "BD",
+          state: "Dhaka",
+          city: "N.Ganj",
+          pincode: "123456",
+        },
+      };
+
+      const {
+        address: { state, pincode },
+        name,
+      } = Person;
+
+      console.log(name, state, pincode);
+
+      // Rezaul Karim Dhaka 123456
+
+      //console.log(city); // ReferenceError
+      const obj = {
+        firstName: "FirstName1",
+        lastName: "LastName1",
+        age: 23,
+        country: "Bangladesh",
+      };
+      const entries = Object.entries(obj);
+      console.log(entries);
+      /*
+            Input: nums = [2,0,2,1,1,0]
+            Output: [0,0,1,1,2,2]
+            */
+      /* var sortColors = function (nums) {
+              var counts = [0, 0, 0];
+              //[]
+              var len = nums.length; //6
+              for (var i = 0; i < len; i++) {
+                counts[nums[i]]++;
+              }
+              for (var j = 0; j < len; j++) {
+                nums[j] = j < counts[0] ? 0 : j < counts[0] + counts[1] ? 1 : 2;
+              }
+            }; */
+      // Example
+      // 0 0 | 1 | 2 1 | 2
+      //   l       i     r
+
+      /*       function sortColors(nums) {
+              function swap(i, j) {
+                [nums[i], nums[j]] = [nums[j], nums[i]];
+              }
+
+              let l = 0;
+              let r = nums.length - 1;
+              let i = 0;
+
+              while (i <= r) {
+                const n = nums[i];
+                if (n === 0) {
+                  swap(i, l);
+                  l++;
+                  i++;
+                } else if (n === 2) {
+                  swap(i, r);
+                  r--;
+                } else {
+                  i++;
+                }
+              }
+            } */
+
+      function bubbleSort(array) {
+        //debugger;
+        for (let i = 0; i < array.length - 1; i++) {
+          for (let j = 0; j < array.length - 1 - i; j++) {
+            const temp = array[j];
+            if (array[j] > array[j + 1]) {
+              array[j] = array[j + 1];
+              array[j + 1] = temp;
+            }
+          }
+        }
+        return array;
+      }
+
+      console.log(
+        bubbleSort([
+          1, 5, 7, 4, 3, 55, 46,
+
+          4, 7, 888,
+        ])
+      );
+      //////////////
+      /////////////
+      ///////////
+      const symOfTwo = (arr1, arr2) => {
+        const output = [];
+        for (const el of arr1) {
+          if (!output.includes(el) && !arr2.includes(el)) {
+            output.push(el);
+          }
+        }
+        for (const el of arr2) {
+          if (!output.includes(el) && !arr1.includes(el)) {
+            output.push(el);
+          }
+        }
+        return output;
+      };
+
+      console.log(symOfTwo([1, 2, 3], [5, 2, 1, 4]));
+
+      function sym() {
+        // debugger;
+        const arrayOfArrs = [...arguments];
+        let output = arrayOfArrs[0];
+        for (let i = 1; i < arrayOfArrs.length; i++) {
+          output = symOfTwo(output, arrayOfArrs[i]);
+        }
+        return output;
+      }
+      console.log(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3]));
+
+      function updateInventory(arr1, arr2) {
+        const obj1 = arr1.reduce(
+          (acc, [amt, name]) => ({
+            ...acc,
+            [name]: amt,
+          }),
+          {}
+        );
+        const obj2 = arr2.reduce(
+          (acc, [amt, name]) => ({
+            ...acc,
+            [name]: amt,
+          }),
+          {}
+        );
+        console.log("before", obj1);
+        for (const name in obj2) {
+          if (name in obj1) {
+            obj1[name] += obj2[name];
+          } else {
+            obj1[name] = obj2[name];
+          }
+        }
+        console.log("after", obj1);
+      }
+
+      // Example inventory lists
+      var curInv = [
+        [21, "Bowling Ball"],
+        [2, "Dirty Sock"],
+        [1, "Hair Pin"],
+        [5, "Microphone"],
+      ];
+
+      var newInv = [
+        [2, "Hair Pin"],
+        [3, "Half-Eaten Apple"],
+        [67, "Bowling Ball"],
+        [7, "Toothpaste"],
+      ];
+
+      updateInventory(curInv, newInv);
+
+      // const a=[r,c]
+      let matrix = [
+        // 0  1  2
+        [1, 1, 1], //0
+        [1, 0, 1], //1
+        [1, 1, 1], //2
+      ];
+
+      const setZeros = (r, c, matrix) => {
+        for (let i = 0; i < matrix.length; i++) {
+          matrix[i][c] = 0;
+        }
+        for (let i = 0; i < matrix[0].length; i++) {
+          matrix[r][i] = 0;
+        }
+      };
+      var setZeroes = function (matrix) {
+        const zeroA = [];
+        //row
+        for (let r = 0; r < matrix.length; r++) {
+          //coloumn
+          for (let c = 0; j < matrix[0].length; c++) {
+            if (matrix[r][c] === 0) zeroA.push([r, c]);
+          }
+        }
+        for (let address of zeroA) {
+          //console.log(address);
+          let row = address[0];
+          let col = address[1];
+          setZeros(row, col, matrix);
+        }
+      };
+
+      //console.log(setZeroes(matrix));
+    </script>
+  </body>
+</html>
