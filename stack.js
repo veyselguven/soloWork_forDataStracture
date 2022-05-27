@@ -67,6 +67,6 @@ console.log(myStack.pop());
 console.log(myStack.peek());
 myStack.push("freeCodeCamp");
 console.log(myStack.size());
-console.log(myStack.peek());
+console.log("peek", myStack.peek());
 console.log(myStack.pop());
 console.log(myStack.peek());
