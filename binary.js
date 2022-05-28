@@ -18,18 +18,37 @@ class BST {
   }
   create(value) {
     const newNode = new Node(value);
+    // eger Rootumuz yoksa ilk seyi root a atiyoruz
     if (!this.root) {
       this.root = newNode;
       return this;
-    } else {
+    }
+    // varsa insertNode function i ile node atiyoruz
+    else {
       this.insertNode(this.root, newNode);
     }
     return this;
   }
+  // insertNode ile bearaber hemde yeni node ve currentNode u
+  // parametre olarak atiyoruz
   insertNode(currentNode, node) {
     if (node.value < currentNode.value) {
+      // eger yeni node parent node(currentNode) tan kucukse
       if (currentNode.left === null) {
+        // left i bossa left e atar
         currentNode.left = node;
+      } else {
+        // left i bos degilse lefttekini parent node olarak ata,yeniden dondur fonksiyonu
+        this.insertNode(currentNode.left, node);
+      }
+    } else {
+      // eger burda parent node yani currentnode tan buyukse ve currentNode right ta
+      // deger yoksa right a ata.
+      if (currentNode.right == null) {
+        currentNode.right = node;
+      } else {
+        // right bos degilse righttaki degeri parent node olarak ata,yeniden dondur fonksiyonu
+        this.insertNode(currentNode.right, node);
       }
     }
   }
