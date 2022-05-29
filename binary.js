@@ -53,3 +53,7 @@ class BST {
     }
   }
 }
+
+const tree = new BST();
+tree.create(10).create(21).create(5).create(32);
+console.log(tree);
