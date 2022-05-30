@@ -93,10 +93,24 @@ class BST {
     }
     return current;
   }
+  //sirali sekilde yazdirma-in order()
+  inOrder() {
+    this.getInOrder(this.root);
+  }
+  getInOrder(node) {
+    if (node.left != null) {
+      this.getInOrder(node.left);
+    }
+    console.log(node.value);
+    if (node.right != null) {
+      this.getInOrder(node.right);
+    }
+  }
 }
 
 const tree = new BST();
 tree.create(10).create(21).create(5).create(32).create(2).create(40);
+tree.inOrder();
 console.log("min", tree.findMinNode());
 console.log("max", tree.findMaxNode());
 //const abc = tree.find(5);
