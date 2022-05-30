@@ -75,10 +75,21 @@ class BST {
     }
     return null;
   }
+  //en buyuk ve en kucuk degeri bulma;
+  // en kucuk sayilar tree nin sol tarafinda bulunur
+  findMinNode() {
+    if (!this.root) return null;
+    let current = this.root;
+    while (current.left) {
+      current = current.left;
+    }
+    return current;
+  }
 }
 
 const tree = new BST();
-tree.create(10).create(21).create(5).create(32);
+tree.create(10).create(21).create(5).create(32).create(2);
+console.log("min", tree.findMinNode());
 const abc = tree.find(5);
 console.log(tree);
 console.log("abc", abc);
