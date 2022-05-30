@@ -85,11 +85,20 @@ class BST {
     }
     return current;
   }
+  findMaxNode() {
+    if (!this.root) return null;
+    let current = this.root;
+    while (current.right) {
+      current = current.right;
+    }
+    return current;
+  }
 }
 
 const tree = new BST();
-tree.create(10).create(21).create(5).create(32).create(2);
+tree.create(10).create(21).create(5).create(32).create(2).create(40);
 console.log("min", tree.findMinNode());
-const abc = tree.find(5);
-console.log(tree);
-console.log("abc", abc);
+console.log("max", tree.findMaxNode());
+//const abc = tree.find(5);
+//console.log(tree);
+//console.log("abc", abc);
