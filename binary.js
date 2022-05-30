@@ -52,8 +52,33 @@ class BST {
       }
     }
   }
+
+  // bu fonksiyonumuz ile specifik olarak belirtilen node u bulma islemi gercelestiriyoruz
+  find(value) {
+    if (!this.root) {
+      return "There is no Robot";
+    } else {
+      const found = this.findNode(this.root, value);
+      if (!found) {
+        return "There is so such node in this tree";
+      }
+      return found;
+    }
+  }
+  findNode(currentNode, value) {
+    if (currentNode.value === value) {
+      return currentNode;
+    } else if (value < currentNode.value && currentNode.left !== null) {
+      return this.findNode(currentNode.left, value);
+    } else if (value > currentNode.value && currentNode.right !== null) {
+      return this.findNode(currentNode.right, value);
+    }
+    return null;
+  }
 }
 
 const tree = new BST();
 tree.create(10).create(21).create(5).create(32);
+const abc = tree.find(5);
 console.log(tree);
+console.log("abc", abc);
