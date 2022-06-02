@@ -34,8 +34,6 @@ var fac = (num) => {
 
 console.log(fac(5));
 
-const fibonacci = () => {};
-
 //Non-recursive version
 
 function fib(number) {
@@ -55,6 +53,8 @@ console.log(fib(6));
 //recursive solution
 
 function fibonacci(n) {
-  if (n < 3) return1;
+  if (n < 3) return 1;
   return fib(n - 1) + fib(n - 2);
 }
+
+console.log(fibonacci(7));
