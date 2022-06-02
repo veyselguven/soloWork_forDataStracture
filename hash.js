@@ -70,3 +70,5 @@ ht.add("rex", "dinosour");
 ht.add("tux", "penguin");
 console.log(ht.lookup("tux"));
 ht.print();
+//test
+//test2
