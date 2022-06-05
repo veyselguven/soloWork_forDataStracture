@@ -29,3 +29,29 @@ let q = function logThis() {
 
 //console.log(q);
 console.log(new q());
+// let arry = [];
+// console.log("arry", arry);
+
+var v = 1;
+var f1 = function () {
+  // console.log(v);
+};
+var f2 = function () {
+  var v = 2;
+  f1();
+};
+f2();
+
+class X {
+  get Y() {
+    return 42;
+  }
+}
+var x = new X();
+x.Y;
+//console.log(x.Y);
+
+function printA() {
+  console.log(answer);
+}
+//printA();
