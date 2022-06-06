@@ -158,3 +158,24 @@ ll.printList();
 // const n2 = new Node(200);
 // console.log(n1);
 // console.log(n2);
+
+var deleteNode2 = function (node) {
+  let next = node.next.next;
+  node.val = node.next.val;
+  node.next = next;
+};
+function deleteNode(llist, position) {
+  // Write your code here
+
+  if (position === 0) return llist.next;
+  let current = llist;
+  let i = 1;
+  while (current) {
+    if (i === position) {
+      current.next = current.next ? current.next.next : null;
+      return llist;
+    }
+    current = current.next;
+    i++;
+  }
+}
