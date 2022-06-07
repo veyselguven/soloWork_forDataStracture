@@ -166,7 +166,6 @@ var deleteNode2 = function (node) {
 };
 function deleteNode(llist, position) {
   // Write your code here
-
   if (position === 0) return llist.next;
   let current = llist;
   let i = 1;
@@ -178,4 +177,40 @@ function deleteNode(llist, position) {
     current = current.next;
     i++;
   }
+}
+
+function deleteNode3(llist, position) {
+  // Write your code here
+  if (position == 0) return llist;
+  let currentNode = llist;
+  let i = 1;
+  while (currentNode) {
+    if (i == position) {
+      currentNode.next = currentNode.next.next;
+      return llist;
+    }
+    currentNode = currentNode.next;
+    i++;
+  }
+}
+function removeAt2(index) {
+  if (index < 0 || index > this.size) {
+    return null;
+  }
+  let current = this.head;
+  let previous;
+  let count = 0;
+  //remove first
+  if (index == 0) {
+    this.head = current.next;
+  } else {
+    while (count < index) {
+      count++;
+      previous = current;
+      current = current.next;
+    }
+    previous.next = current.next;
+  }
+
+  this.size--;
 }

@@ -55,3 +55,20 @@ function printA() {
   console.log(answer);
 }
 //printA();
+
+function foodPrice(prices, addValue) {
+  var newPriceList = [];
+  for (var i = 0; i < prices.length; i++) {
+    var finalPrice = prices[i] + addValue;
+    newPriceList.push(finalPrice);
+  }
+  console.log(i);
+  console.log(finalPrice);
+  return newPriceList;
+}
+let result = foodPrice([10, 20, 30], 10);
+console.log(result);
+
+grater = "Say Hello";
+console.log(grater);
+var grater;
