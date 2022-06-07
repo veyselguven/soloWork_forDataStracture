@@ -64,7 +64,7 @@ var inorderTraversal = function (root) {
 // 3-if no cycle and left child exists
 // create a cyle, go left
 
-var inorderTraversal = function (root) {
+var inorderTraversal4 = function (root) {
   let result = [];
   dfs(root);
 
@@ -76,5 +76,25 @@ var inorderTraversal = function (root) {
     }
   }
 
+  return result;
+};
+
+var inorderTraversal5 = function (root) {
+  var stack = [];
+  var curr = root;
+  var result = [];
+  while (stack.length > 0 || curr != null) {
+    if (curr) {
+      stack.push(curr);
+      // go left
+      curr = curr.left;
+    } else {
+      // go up
+      curr = stack.pop();
+      result.push(curr.val);
+      //go right
+      curr = curr.right;
+    }
+  }
   return result;
 };
