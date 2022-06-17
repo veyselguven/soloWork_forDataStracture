@@ -45,3 +45,20 @@ const object4 = {
 
 console.log(Object.keys(object4));
 //[ 'a', 'b', 'c' ]
+
+let veysel = function (s) {
+  let max = 0;
+  let begin = 0;
+  let map = {};
+  for (let i = 0; i < s.length; i++) {
+    if (map[s[i]] !== undefined && map[s[i]] >= i) {
+      begin = map[s[i]] + 1;
+    }
+    map[s[i]] = i;
+    max = Math.max(max, i - begin + 1);
+  }
+
+  return max;
+};
+
+console.log("return map", veysel("ab0c0ed"));
