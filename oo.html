@@ -8,16 +8,17 @@
   </head>
   <body>
     <script>
+      /*
       var minSubArrayLen = function (s, nums) {
-        debugger;
+        // debugger;
         let windowSum = 0;
         let output = Infinity;
         let windowStart = 0;
-        for (let windowEnd = 0; windowEnd < nums.length; windowEnd++) {
-          windowSum += nums[windowEnd];
+        for (let i = 0; i < nums.length; i++) {
+          windowSum += nums[i];
           // shrink the window until the windowSum is smaller than s
           while (windowSum >= s) {
-            output = Math.min(output, windowEnd - windowStart + 1);
+            output = Math.min(output, i - windowStart + 1);
             // subtract the element at the windowStart index
             windowSum -= nums[windowStart];
             // change windowStart to the next element
@@ -27,6 +28,9 @@
         return output == Infinity ? 0 : output;
       };
       console.log(minSubArrayLen(4, [1, 1, 1, 2, 3, 5, 4]));
+      */
+
+      console.log(uncompress("3n12e2z"));
     </script>
   </body>
 </html>

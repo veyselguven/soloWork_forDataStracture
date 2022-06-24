@@ -98,4 +98,14 @@ var minSubArrayLen = function (s, nums) {
   }
   return output == Infinity ? 0 : output;
 };
-console.log(minSubArrayLen(4, [1, 1, 1, 2, 3, 5, 4]));
+//console.log(minSubArrayLen(4, [1, 1, 1, 2, 3, 5, 4]));
+
+let obj = { a: 1, b: 2, c: 3 };
+// if ("a" in obj) {
+//   console.log(true);
+// } else {
+//   console.log(false);
+// }
+
+let s = "244vbbw";
+console.log(typeof s[0]);
