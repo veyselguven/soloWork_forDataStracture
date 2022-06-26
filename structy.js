@@ -130,3 +130,24 @@ console.log("setA", setA);
 let setB = new Set([3, 4, 5, 7]);
 
 console.log("setB", setB);
+
+const fiveSort = (nums) => {
+  // todo
+  //time O(n) n=>length
+  //O(1) constant space
+  let right = nums.length - 1;
+  let left = 0;
+  while (left <= right) {
+    if (nums[right] === 5) {
+      right--;
+    } else if (nums[left] === 5) {
+      [nums[left], nums[right]] = [nums[right], nums[left]];
+      //console.log("nums",nums);
+    } else {
+      left++;
+    }
+  }
+  return nums;
+};
+
+fiveSort([5, 5, 5, 1, 1, 1, 4]);
