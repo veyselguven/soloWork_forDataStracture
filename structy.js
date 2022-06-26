@@ -90,3 +90,43 @@ const pairSum = (numbers, targetSum) => {
 };
 
 console.log(pairSum([4, 7, 9, 2, 5, 1], 5));
+
+let mySet = new Set();
+
+mySet.add(4);
+
+mySet.add(5);
+mySet.add(4);
+
+//console.log(mySet); //set{4,5}
+
+const o = { a: 1, b: 2 };
+mySet.add(o);
+console.log(mySet);
+
+var intersection = (a, b) => {
+  let result = [];
+  let myset = new Set();
+
+  for (let i = 0; i < a.length; i++) {
+    myset.add(a[i]);
+  }
+  for (let j = 0; j < b.length; j++) {
+    if (myset.has(b[j])) {
+      result.push(b[j]);
+    }
+  }
+  // console.log(myset)
+  return result;
+};
+
+intersection([4, 2, 1], [1, 2, 4, 6]);
+
+let x = [2, 3, 5, 5, 2, 6, 8];
+let setA = new Set(x);
+
+console.log("setA", setA);
+
+let setB = new Set([3, 4, 5, 7]);
+
+console.log("setB", setB);
