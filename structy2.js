@@ -63,3 +63,29 @@ const sumList = (head) => {
     return head.val+sumList(head.next)
   }
   */
+
+
+const linkedListValues = (head) => {
+    // todo
+    let current=head;
+    let values=[];
+        while(current!==null){
+          values.push(current.val)
+          current=current.next
+        } 
+    return values
+  };
+  /*
+  const linkedListValues=(head)=>{
+    let values=[];
+    fillValues(head,values)
+    return values;
+  };
+  
+  
+  const fillValues=(head,values)=>{
+    if(head===null) return;
+   values.push(head.val); 
+    fillValues(head.next,values)
+  }
+  */
