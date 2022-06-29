@@ -89,3 +89,26 @@ const linkedListValues = (head) => {
     fillValues(head.next,values)
   }
   */
+
+
+
+
+
+  const fiveSort = (nums) => {
+    // todo
+    //time O(n) n=>length
+    //O(1) constant space
+    let right=nums.length-1;
+    let left=0;
+    while(left<=right){
+    if(nums[right]===5){
+      right--;
+    }else if(nums[left]===5){
+    [nums[left],nums[right]]=[nums[right],nums[left]]
+      //console.log("nums",nums);
+    }else{
+      left++
+    } 
+    }
+    return nums;
+  };
