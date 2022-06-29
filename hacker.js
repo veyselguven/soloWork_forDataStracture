@@ -36,4 +36,25 @@ let arr1 = [
   [9, 8, 9],
 ];
 
-console.log(diagonalDifference("arr1", arr1));
+//console.log(diagonalDifference("arr1", arr1));
+// function plusMinus(arr) {
+//   // Write your code here
+//   let pos = 0;
+//   let neg = 0;
+//   let zero = 0;
+//   let len = arr.length;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] < 0) neg++;
+//     if (arr[i] > 0) pos++;
+//     if ((arr[i] = 0)) zero++;
+//   }
+//   return [
+//     (pos / len).toFixed(6),
+//     (neg / len).toFixed(6),
+//     (zero / len).toFixed(6),
+//   ];
+// }
+// console.log(plusMinus([-4, 3, -9, 0, 4, 1]));
+let counter = [0, 0, 0];
+
+counter.forEach((num) => console.log(num));
