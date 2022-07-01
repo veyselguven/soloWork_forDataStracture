@@ -89,3 +89,102 @@ const mergeLists=(head1,head2)=>{
   }  
 }
 */
+
+const removeNode = (head, targetVal) => {
+  if (head.val === targetVal) {
+    return head.next;
+  }
+  let current = head;
+  let prev = null;
+  while (current !== null) {
+    if (current.val === targetVal) {
+      prev.next = current.next;
+      break;
+    }
+    prev = current;
+    current = current.next;
+  }
+  return head;
+};
+
+//O(n) time
+//O(1) space constant
+const isUnivalueList = (head) => {
+  let current = head;
+  let next = current.next;
+  while (current && next) {
+    if (current.val !== next.val) {
+      return false;
+    }
+    current = current.next;
+  }
+  return true;
+};
+
+/*
+//O(2n) ; time
+//O(n); space
+const isUnivalueList = (head) => {
+  // todo
+  let results=[];
+  let current=head;
+  while(current){
+    results.push(current.val);
+    current=current.next
+  }
+  let hash={};
+  
+  for(result of results){
+    if(!hash[result]){
+      hash[result]=0
+    }
+      hash[result]++   
+  }
+  
+  console.log(hash)
+  let arrayKey=Object.keys(hash);
+  if(arrayKey.length===1) {
+    return true
+  }
+  return false
+ }; 
+  
+  */
+//for(let i=0; i<result.length; i++){
+//  for(let j=i+1; j<result.length; j++){
+//   if(result[i]!==result[j]) return false
+//   }
+// }
+//  return true
+/* 
+/
+/ 
+/
+*/
+
+//O(n) time
+//O(1) space
+const longestStreak = (head) => {
+  // todo
+  let maxStr = 0;
+  let currentStreak = 0;
+  let currentNode = head;
+  let prevVal = null;
+  while (currentNode) {
+    if (currentNode.val === prevVal) {
+      currentStreak++;
+      //console.log(maxStr);
+    } else {
+      currentStreak = 1;
+    }
+    if (currentStreak > maxStr) {
+      maxStr = currentStreak;
+    }
+    prevVal = currentNode.val;
+
+    currentNode = currentNode.next;
+    //console.log(max)
+  }
+
+  return maxStr;
+};
