@@ -188,3 +188,40 @@ const longestStreak = (head) => {
 
   return maxStr;
 };
+const removeElements = function (head, val) {
+  let dummyNode = new ListNode(-1);
+  dummyNode.next = head;
+  let prev = dummyNode;
+  let current = head;
+
+  while (current) {
+    if (current.val == val) {
+      prev.next = current.next;
+      current = current.next;
+    } else {
+      prev = current;
+      current = current.next;
+    }
+  }
+  return dummyNode.next;
+};
+
+var removeElements2 = function (head, val) {
+  let curr = head;
+  let prev = null;
+
+  while (curr) {
+    if (curr.val === val) {
+      if (prev === null) {
+        // you might be wondering why this validation, simple reason is to handle => [7,7,7,7] 7
+        head = head.next;
+      } else {
+        prev.next = curr.next;
+      }
+    } else {
+      prev = curr;
+    }
+    curr = curr.next;
+  }
+  return head;
+};
