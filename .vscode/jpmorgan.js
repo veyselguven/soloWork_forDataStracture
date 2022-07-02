@@ -54,3 +54,40 @@ function minimalOperations(words) {
 const words = ["ab", "aab", "abb", "abab", "abaaaba"];
 
 minimalOperations(words);
+
+var isSubsequence1 = function (s, t) {
+  if (s == "" && t == "") {
+    return true;
+  }
+  let left = 0;
+  for (let i = 0; i < t.length; i++) {
+    if (s[left] === t[i]) {
+      left++;
+    }
+    if (left == s.length) {
+      return true;
+    }
+  }
+  return false;
+};
+var isSubsequence = function (s, t) {
+  if (s === "") return true;
+
+  // p
+  //"abc"
+  // p
+  //"ahbgdc"
+
+  let p1 = 0;
+  let p2 = 0;
+
+  while (p2 <= t.length - 1) {
+    if (s[p1] == t[p2]) {
+      p1++;
+      p2++;
+    } else {
+      p2++;
+    }
+  }
+  return p1 == s.length;
+};
