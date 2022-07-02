@@ -1,7 +1,7 @@
 console.log("naber");
 
 var generate = function (numRows) {
-  // debugger;
+  //debugger;
   if (numRows < 1) return [];
   if (numRows === 1) return [[1]];
 
@@ -21,3 +21,16 @@ var generate = function (numRows) {
 };
 
 console.log(generate(5));
+
+function fizzBuzz(n) {
+  //debugger;
+  let result = "";
+  for (let i = 1; i <= n; i++) {
+    if (i % 3 === 0) result += "Fizz";
+    else if (i % 5 === 0) result += "Buzz";
+    else if (i % 3 === 0 && n % 5 === 0) result += "FizzBuzz";
+    else result += i;
+  }
+  console.log(result);
+}
+fizzBuzz(15);
