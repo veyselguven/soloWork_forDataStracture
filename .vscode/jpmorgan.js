@@ -91,3 +91,60 @@ var isSubsequence = function (s, t) {
   }
   return p1 == s.length;
 };
+
+let nums = [1, 2, 43, 5, 6, 4];
+const result = new Array(nums.length).fill(0);
+console.log(result);
+
+/* 
+
+
+
+
+*/
+//time O(n)
+//space0(n)
+/*
+var sortedSquares = function(nums) {
+    let result=[];
+    for(let i=0; i<nums.length; i++){
+        let element=nums[i];
+        result.push(element*element)
+    }
+    return result.sort((a,b)=>a-b)
+};
+
+*/
+
+//index=nums.length-1
+
+// Math.abs(l)>Math.abs(r){
+// nums[index] =nums[l]*nums[l];
+// l++
+// }else{
+// r--;
+//}
+
+//index--
+//   L
+//  -4 -1 0 3 10
+//          R
+
+//  [             ]
+var sortedSquares = function (nums) {
+  let l = 0;
+  let r = nums.length - 1;
+  let index = nums.length - 1;
+  let result = [];
+  while (l <= r) {
+    if (Math.abs(nums[l]) < Math.abs(nums[r])) {
+      result[index] = nums[r] * nums[r];
+      r--;
+    } else {
+      result[index] = nums[l] * nums[l];
+      l++;
+    }
+    index--;
+  }
+  return result;
+};
