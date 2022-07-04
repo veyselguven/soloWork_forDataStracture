@@ -93,9 +93,9 @@ var isSubsequence = function (s, t) {
 };
 
 let nums = [1, 2, 43, 5, 6, 4];
-const result = new Array(nums.length).fill(0);
+//const result = new Array(nums.length).fill(0); // [0, 0, 0, 0, 0, 0]
+const result = nums.fill(31, 1, 9);
 console.log(result);
-
 /* 
 
 
