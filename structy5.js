@@ -25,12 +25,21 @@ const createLinkedList = (values) => {
   return dummyHead.next;
 };
 
-const createLinkedListRecursive1 = (values) => {
-  debugger;
-  if (values.length === 0) return null;
+// const createLinkedListRecursive1 = (values) => {
+//   debugger;
+//   if (values.length === 0) return null;
 
-  const head = new Node(values[0]);
-  head.next = createLinkedListRecursive1(values.slice(1));
+//   const head = new Node(values[0]);
+//   head.next = createLinkedListRecursive1(values.slice(1));
+//   return head;
+// };
+
+const createLinkedListRecursive1 = (values, i = 0) => {
+  if (i === values.length) {
+    return null;
+  }
+  let head = new Node(values[i]);
+  head.next = createLinkedListRecursive1(values, i + 1);
   return head;
 };
 
