@@ -48,3 +48,9 @@ console.log(depthFirstValues(a));
 // d   e     f
 //console.log([a]);
 //console.log("popppp", [a].pop().val);
+const depthFirstValuesRecursive = (root) => {
+  if (!root) return [];
+  let leftNode = depthFirstValues(root.left);
+  let rightNode = depthFirstValues(root.right);
+  return [root.val, ...leftNode, ...rightNode];
+};
