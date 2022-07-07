@@ -4,12 +4,12 @@ function veysel(s) {
   const soFar = {};
   for (let i = 0; i < s.length; i++) {
     let element = s[i];
-    soFar[element] = soFar[element] + 1 || 1;
-    // if (!soFar[element]) {
-    //   soFar[element] = 1;
-    // } else if (soFar[element]) {
-    //   soFar[element] += 1;
-    // }
+    //  soFar[element] = soFar[element] + 1 || 1;
+    if (!soFar[element]) {
+      soFar[element] = 1;
+    } else if (soFar[element]) {
+      soFar[element] += 1;
+    }
     while (soFar[element] > 1) {
       let char = s[windowStart];
       if (soFar[char] > 1) {
