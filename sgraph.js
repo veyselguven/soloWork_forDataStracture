@@ -41,5 +41,3 @@ const graph = {
 
 depthFirstPrintRecursive(graph, "a"); //abdfce
 //depthFirstPrint(graph, "a"); //abdfce
-
-// breadFirstPrint(graph,'a');  //acbedf
