@@ -21,3 +21,19 @@ const isValid = (num, words) => {
 };
 
 console.log(isValid(3160061789, ["amazon", "google", "facebook"]));
+
+const a = new Set([2, 5, 6, 7, 8, 9, 4, 3, 33]);
+const b = new Set([2, 5, 6, 7, 8, 9, 4, 3, 33]);
+
+//console.log(b);
+
+let result = [];
+for (let row = 0; row < 6; row++) {
+  let subResult = [];
+  for (let col = 0; col < 1; col++) {
+    subResult.push(col);
+  }
+  result.push(subResult);
+}
+
+console.log(result);
