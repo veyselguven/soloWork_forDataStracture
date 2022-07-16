@@ -100,6 +100,7 @@ console.log(maxSumArr(arr1, 3));
 //  *
 //  *
 //  */
+
 var minSubArrayLen = function (s, nums) {
   debugger;
   let windowSum = 0;

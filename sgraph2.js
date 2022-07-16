@@ -12,7 +12,7 @@ const breadFirstPrint = (graph, source) => {
 };
 
 const graph = {
-  a: ["c", "b"],
+  a: ["c", "b "],
   b: ["d"],
   c: ["e"],
   d: ["'f"],
