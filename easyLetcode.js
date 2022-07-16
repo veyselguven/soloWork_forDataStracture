@@ -81,7 +81,7 @@
 // }
 
 var lengthOfLIS = function (nums) {
-  debugger;
+  // debugger;
   if (!nums.length) return 0;
 
   // dynamic length because JavaScript is awesome like that :)
@@ -117,7 +117,7 @@ var lengthOfLIS = function (nums) {
 
   return tails.length;
 };
-// console.log(lengthOfLIS([10, 9, 2, 5, 3, 7, 101, 18]));
+console.log(lengthOfLIS([4, 18, 20, 10, 12, 15, 19]));
 
 // const lengthOfLIS = (nums) => {
 //   debugger;
