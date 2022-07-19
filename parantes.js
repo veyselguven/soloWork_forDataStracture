@@ -22,7 +22,7 @@ var isValid = function (s) {
   return stack.length === 0;
 };
 
-console.log(isValid("{[]}({}"));
+//console.log(isValid("{[]}({}"));
 
 const decompressBraces = (s) => {
   const nums = "123456789";
@@ -57,3 +57,28 @@ const repeat = (str, n) => {
   return result;
 };
 //decompressBraces("2{q}3{tu}v");
+
+let result = "";
+let array = [1, 2, 4, 6, 7, 8];
+for (let i = 0; i < array.length; i++) {
+  result += array[i];
+}
+
+//console.log(isNaN("1"));
+
+//console.log(typeof result);
+const pairProduct = (numbers, targetProduct) => {
+  let hash = {};
+  for (let i = 0; i < numbers.length; i++) {
+    let value = numbers[i];
+    let complemet = targetProduct / value;
+    if (complemet in hash) {
+      // return [hash[complemet], i];
+    }
+    hash[value] = i;
+    // console.log(hash);
+  }
+  console.log(hash);
+};
+
+console.log(pairProduct([4, 7, 9, 2, 5, 1], 5));
