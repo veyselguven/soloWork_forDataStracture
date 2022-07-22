@@ -1,6 +1,7 @@
 let dict = { o: 0, l: 1, z: 2, i: 3, h: 4, s: 5, g: 6, e: 3 };
 // 0(n+m)
 const isValid = (num, words) => {
+  // debugger;
   let numString = String(num);
   for (let word of words) {
     //o(n) n time
@@ -21,6 +22,27 @@ const isValid = (num, words) => {
 };
 
 console.log(isValid(3160061789, ["amazon", "google", "facebook"]));
+/* 
+
+
+
+
+
+*/
+var plusOne = function (digits) {
+  //debugger;
+  for (let i = digits.length - 1; i >= 0; i--) {
+    if (digits[i] < 9) {
+      digits[i]++;
+      return digits;
+    }
+    digits[i] = 0;
+  }
+  digits.unshift(1);
+  return digits;
+};
+
+console.log(plusOne([9]));
 
 // const a = new Set([2, 5, 6, 7, 8, 9, 4, 3, 33]);
 // const b = new Set([2, 5, 6, 7, 8, 9, 4, 3, 33]);

@@ -81,4 +81,17 @@ const pairProduct = (numbers, targetProduct) => {
   console.log(hash);
 };
 
-console.log(pairProduct([4, 7, 9, 2, 5, 1], 5));
+//console.log(pairProduct([4, 7, 9, 2, 5, 1], 5));
+
+// let a = ["adsf", 3];
+// console.log(new Set(a));
+
+const set1 = new Set([1, 2, 3, 4]);
+
+// ✅ ️ using forEach
+
+set1.forEach((element) => {
+  // 👉️ one, two, three, four
+});
+
+console.log(set1);
