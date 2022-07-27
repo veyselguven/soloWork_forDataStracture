@@ -13,6 +13,7 @@ const depthFirstPrint = (graph, source) => {
     }
   }
 };
+//  depthFirstPrint(graph, "a"); //abdfce
 /* 
       a
       b

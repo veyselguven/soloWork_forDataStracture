@@ -21,12 +21,8 @@ const isValid = (num, words) => {
   return false;
 };
 
-console.log(isValid(3160061789, ["amazon", "google", "facebook"]));
+//console.log(isValid(3160061789, ["amazon", "google", "facebook"]));
 /* 
-
-
-
-
 
 */
 var plusOne = function (digits) {
@@ -42,9 +38,15 @@ var plusOne = function (digits) {
   return digits;
 };
 
-console.log(plusOne([9]));
+//console.log(plusOne([9]));
 
-// const a = new Set([2, 5, 6, 7, 8, 9, 4, 3, 33]);
+let a = new Set();
+a.add("a");
+a.add("b");
+a.add("v");
+console.log(a);
+
+console.log("array", Array.from(a));
 // const b = new Set([2, 5, 6, 7, 8, 9, 4, 3, 33]);
 
 // //console.log(b);
