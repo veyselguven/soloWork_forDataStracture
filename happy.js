@@ -1,5 +1,5 @@
 var isHappy = function (n) {
-  // debugger;
+  //debugger;
   let seen = new Set();
   while (!seen.has(n)) {
     seen.add(n);
@@ -15,7 +15,7 @@ var isHappy = function (n) {
   }
   return false;
 };
-//console.log(isHappy(4));
+console.log(isHappy(4));
 /* 
 /
 /
