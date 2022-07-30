@@ -1,7 +1,7 @@
 let dict = { o: 0, l: 1, z: 2, i: 3, h: 4, s: 5, g: 6, e: 3 };
 // 0(n+m)
 const isValid = (num, words) => {
-  // debugger;
+  //debugger;
   let numString = String(num);
   for (let word of words) {
     //o(n) n time
@@ -21,10 +21,8 @@ const isValid = (num, words) => {
   return false;
 };
 
-//console.log(isValid(3160061789, ["amazon", "google", "facebook"]));
-/* 
-
-*/
+console.log(isValid(3160061789, ["amazon", "google", "facebook"]));
+/* */
 var plusOne = function (digits) {
   //debugger;
   for (let i = digits.length - 1; i >= 0; i--) {
@@ -37,6 +35,9 @@ var plusOne = function (digits) {
   digits.unshift(1);
   return digits;
 };
+var addBinary = function (a, b) {
+  return (BigInt("0b" + a) + BigInt("0b" + b)).toString(2);
+};
 
 //console.log(plusOne([9]));
 
@@ -44,9 +45,9 @@ let a = new Set();
 a.add("a");
 a.add("b");
 a.add("v");
-console.log(a);
+//console.log(a);
 
-console.log("array", Array.from(a));
+//console.log("array", Array.from(a));
 // const b = new Set([2, 5, 6, 7, 8, 9, 4, 3, 33]);
 
 // //console.log(b);
@@ -61,3 +62,5 @@ console.log("array", Array.from(a));
 // }
 
 // console.log(result);
+
+console.log("3160061789".indexOf("003"));

@@ -27,14 +27,14 @@ let hatun = "veysel guven basbaydar";
 let veysel = "asdfsdg: sdf&53#@^ 2v3r ";
 
 veysel = veysel.replace(/[^a-z0-9]/gi, "");
-console.log("veysel1", veysel);
+console.log("veysel1", veysel); // asdfsdgsdf532v3r
 //Remove all non-alphanumeric Characters from String
 //asdfsdgsdf532v3r
 
 veysel = veysel.replace(/[1234567890]/g, "");
-//asdfsdg: sdf&#@^ vr
+//asdfsdgsdf532v3r
 
-console.log("veysel2", veysel);
+console.log("veysel2", veysel); //asdfsdgsdfvr
 
 function validateIP(ip) {
   /**
