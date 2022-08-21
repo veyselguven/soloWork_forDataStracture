@@ -1,10 +1,12 @@
 console.log("test");
 
 var groupAnagrams = function (strs) {
-  debugger;
+  //debugger;
+  let arr = [];
+  let obj = {};
+  let count = 0;
   for (let i = 0; i < strs.length; i++) {
     let str = strs[i].split("").sort().join();
-
     if (!obj.hasOwnProperty(str)) {
       obj[str] = count;
       arr[count] = [strs[i]];
@@ -19,4 +21,4 @@ var groupAnagrams = function (strs) {
 
 strs = ["eat", "tea", "tan", "ate", "nat", "bat"];
 
-//console.log(groupAnagrams(strs));
+console.log(groupAnagrams(strs));
