@@ -135,3 +135,22 @@ console.log(lengthOfLIS([4, 18, 20, 10, 12, 15, 19]));
 // };
 
 // console.log(lengthOfLIS([10, 9, 2, 5, 3, 7, 101, 18]));
+var majorityElement = function (nums) {
+  let map = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    if (!map[nums[i]]) {
+      map[nums[i]] = 1;
+    } else {
+      map[nums[i]]++;
+    }
+  }
+  console.log(map);
+  let maxValue = Math.max(...Object.values(map));
+  console.log(maxValue);
+  for (let i in map) {
+    if (map[i] === maxValue) {
+      return i;
+    }
+  }
+};
