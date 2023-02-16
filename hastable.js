@@ -24,9 +24,11 @@ let s = "egg",
 //console.log(isIsomorphic(s, t));
 
 let a = "veysel";
-for (let i in a) {
-  console.log(i);
+for (let index in a) {
+  console.log("i=>", index);
+  console.log("a=>", a[index]);
 }
+
 
 function pigIt(str) {
   str = str.split(" ");
