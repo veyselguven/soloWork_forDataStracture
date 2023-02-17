@@ -23,13 +23,21 @@ let s = "egg",
 
 //console.log(isIsomorphic(s, t));
 
-let a = "veysel";
-for (let index in a) {
-  console.log("i=>", index);
-  console.log("a=>", a[index]);
+// let a = "veysel";
+// for (let index in a) {
+//   console.log("i=>", index);
+//   console.log("a=>", a[index]);
+// }
+// let a = { name: "Veysel", surname: "Basbyadr" };
+// for (let index in a) {
+//   console.log("i=>", index); // name ,surname
+//   console.log("a=>", a[index]); // veysel,basbaydar
+// }
+let b = [{ name: "Veysel", surname: "Basbyadr" }];
+for (let x of b) {
+  console.log("x=>", x);
+  console.log("b=>", b);
 }
-
-
 function pigIt(str) {
   str = str.split(" ");
   let result = [];
