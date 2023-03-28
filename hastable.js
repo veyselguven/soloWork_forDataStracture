@@ -72,22 +72,24 @@
 // let a = 41;
 // a--;
 // console.log(a);
-var selfDividingNumbers = function (left, right) {
-  // debugger;
-  let result = [];
+// var selfDividingNumbers = function (left, right) {
+//   // debugger;
+//   let result = [];
 
-  for (let i = left; i <= right; i++) {
-    let compareNum = i;
-    //  console.log("compareNum=>",compareNum)
-    let num = String(compareNum).split("");
-    // console.log("num",num)
-    for (let j = 0; j < num.length; j++) {
-      if (compareNum % Number(num[j]) === 0) {
-        result.push(compareNum);
-      }
-    }
-  }
-  return result;
-};
+//   for (let i = left; i <= right; i++) {
+//     let compareNum = i;
+//     //  console.log("compareNum=>",compareNum)
+//     let num = String(compareNum).split("");
+//     // console.log("num",num)
+//     for (let j = 0; j < num.length; j++) {
+//       if (compareNum % Number(num[j]) === 0) {
+//         result.push(compareNum);
+//       }
+//     }
+//   }
+//   return result;
+// };
 
-console.log(selfDividingNumbers(1, 22));
+//console.log(selfDividingNumbers(1, 22));
+
+console.log(NaN == NaN);

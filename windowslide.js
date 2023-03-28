@@ -36,14 +36,14 @@ function maxSumArr(arr, num) {
   return maxSum;
 }
 
-// temp 6
-// max  6
-//
-//[1, 2, 3, 5, 4, 8, 6, 2];
+// // temp 6
+// // max  6
+// //
+// //[1, 2, 3, 5, 4, 8, 6, 2];
 
 const arr1 = [1, 2, 3, 5, 4, 8, 6, 2];
 
-//console.log(maxSumArr(arr1, 3));
+console.log(maxSumArr(arr1, 3));
 /*
  *
  *
@@ -101,24 +101,24 @@ const arr1 = [1, 2, 3, 5, 4, 8, 6, 2];
 //  *
 //  */
 
-var minSubArrayLen = function (s, nums) {
-  debugger;
-  let windowSum = 0;
-  let output = Infinity;
-  let windowStart = 0;
-  for (let windowEnd = 0; windowEnd < nums.length; windowEnd++) {
-    windowSum += nums[windowEnd];
-    // shrink the window until the windowSum is smaller than s
-    while (windowSum >= s) {
-      output = Math.min(output, windowEnd - windowStart + 1);
-      // subtract the element at the windowStart index
-      windowSum -= nums[windowStart];
-      // change windowStart to the next element
-      windowStart++;
-    }
-  }
-  return output == Infinity ? 0 : output;
-};
+// var minSubArrayLen = function (s, nums) {
+//   debugger;
+//   let windowSum = 0;
+//   let output = Infinity;
+//   let windowStart = 0;
+//   for (let windowEnd = 0; windowEnd < nums.length; windowEnd++) {
+//     windowSum += nums[windowEnd];
+//     // shrink the window until the windowSum is smaller than s
+//     while (windowSum >= s) {
+//       output = Math.min(output, windowEnd - windowStart + 1);
+//       // subtract the element at the windowStart index
+//       windowSum -= nums[windowStart];
+//       // change windowStart to the next element
+//       windowStart++;
+//     }
+//   }
+//   return output == Infinity ? 0 : output;
+// };
 // //console.log(minSubArrayLen(4, [1, 1, 1, 2, 3, 5, 4]));
 
 // let obj = { a: 1, b: 2, c: 3 };
@@ -131,67 +131,67 @@ var minSubArrayLen = function (s, nums) {
 // let s = "244vbbw";
 // console.log(typeof s[0]);
 
-function miniMaxSum(arr) {
-  //debugger;
-  let currentSum = 0;
-  let maxSum = -Infinity;
-  let minSum = Infinity;
-  for (let i = 0; i < 4; i++) {
-    currentSum += arr[i];
-  }
-  maxSum = currentSum;
-  minSum = currentSum;
-  for (let i = 4; i < arr.length; i++) {
-    currentSum = currentSum - arr[i - 4] + arr[i];
-    maxSum = Math.max(currentSum, maxSum);
-    minSum = Math.min(currentSum, minSum);
-  }
-  return maxSum + minSum;
-}
+// function miniMaxSum(arr) {
+//   //debugger;
+//   let currentSum = 0;
+//   let maxSum = -Infinity;
+//   let minSum = Infinity;
+//   for (let i = 0; i < 4; i++) {
+//     currentSum += arr[i];
+//   }
+//   maxSum = currentSum;
+//   minSum = currentSum;
+//   for (let i = 4; i < arr.length; i++) {
+//     currentSum = currentSum - arr[i - 4] + arr[i];
+//     maxSum = Math.max(currentSum, maxSum);
+//     minSum = Math.min(currentSum, minSum);
+//   }
+//   return maxSum + minSum;
+// }
 
 //console.log(miniMaxSum([2, 3, 45, 3, 5, 775, 4]));
 
 // let aa = [2, 355, 4, 5, 3, 333, 4];
 // console.log(aa.sort((a, b) => a - b));
 
-const abc = [1, 3, 5, 67, 84, 3, 6];
-let sorted = abc.sort((a, b) => b - a);
-//console.log(sorted);
+// const abc = [1, 3, 5, 67, 84, 3, 6];
+// let sorted = abc.sort((a, b) => b - a);
+// //console.log(sorted);
 
-//console.log(sorted.slice(2));
+// //console.log(sorted.slice(2));
 
-let x = [1, 2, 4, 5];
-//console.log(sorted.unshift(16));
-function findArrayQuadruplet(arr, s) {
-  // debugger;
-  if (arr.length < 4) return [];
-  let sum = 0;
-  let currentSum = 0;
-  let result = [];
-  for (let i = 0; i < 4; i++) {
-    sum += arr[i];
-    result.push(arr[i]);
-    if (sum === s) {
-      // let b= arr.slice(0,4)
-      return result.sort((a, b) => a - b);
-    }
-  }
-  //[2, 7, 4, 0, 9, 5, 1, 3]
-  // result=[2,7,4,0,9]
-  currentSum = sum;
-  for (let i = 4; i < arr.length; i++) {
-    currentSum = currentSum + arr[i] - arr[i - 4];
-    result.push(arr[i]);
-    result.shift(0);
-    if (currentSum === s) {
-      // let a= arr.slice(i,i+1)
-      return result.sort((a, b) => a - b);
-    }
-  }
-  return [];
-}
+// let x = [1, 2, 4, 5];
+// //console.log(sorted.unshift(16));
+// function findArrayQuadruplet(arr, s) {
+//   // debugger;
+//   if (arr.length < 4) return [];
+//   let sum = 0;
+//   let currentSum = 0;
+//   let result = [];
+//   for (let i = 0; i < 4; i++) {
+//     sum += arr[i];
+//     result.push(arr[i]);
+//     if (sum === s) {
+//       // let b= arr.slice(0,4)
+//       return result.sort((a, b) => a - b);
+//     }
+//   }
+//   //[2, 7, 4, 0, 9, 5, 1, 3]
+//   // result=[2,7,4,0,9]
+//   currentSum = sum;
+//   for (let i = 4; i < arr.length; i++) {
+//     currentSum = currentSum + arr[i] - arr[i - 4];
+//     result.push(arr[i]);
+//     result.shift(0);
+//     if (currentSum === s) {
+//       // let a= arr.slice(i,i+1)
+//       return result.sort((a, b) => a - b);
+//     }
+//   }
+//   return [];
+// }
 
-let arr = [1, 2, 3, 4, 5, 9, 19, 12, 12, 19],
-  s = 20;
+// let arr = [1, 2, 3, 4, 5, 9, 19, 12, 12, 19],
+//   s = 20;
 
-console.log(findArrayQuadruplet(arr, s));
+// console.log(findArrayQuadruplet(arr, s));
