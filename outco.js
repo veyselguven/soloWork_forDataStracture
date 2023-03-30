@@ -32,13 +32,48 @@ longestDecrease(nums) - Given an array of integers, return the longest streak of
 
 majorityTwoElement(nums) - Given an array of integers, return the top two most common elements. If there is a tie, return any valid two.
 
-
 [1, 2, 3, 4, 5, 3, 4] -> [3, 4] / [4, 3]
 [1, 2, 3, 4, 5, 3, 4, 3] -> [3, 4]
 [1,1,2,2,3,3] -> 
 [1,1,1,2,2,3,3] -> [1,2] / [1,3]
 
 */
+
+const majorityTwoElement = (nums) => {
+  let hashTable = {};
+  for (let num of nums) {
+    if (!(num in hashTable)) {
+      hashTable[num] = 1;
+    } else {
+      hashTable[num]++;
+    }
+  }
+  //  console.log(hashTable)
+  let getValues = Object.values(hashTable);
+  // console.log(getValues);
+  let getSortedValues = getValues.sort((a, b) => b - a);
+  //console.log(getSortedValues);
+  let getTwo = getSortedValues.splice(0, 2);
+  //console.log(getTwo);
+  let result = [];
+  for (let i in hashTable) {
+    // if (getTwo.includes(hashTable[i])) {
+    if (hashTable[i] === getTwo[0] || hashTable[i] === getTwo[1]) {
+      result.push(Number(i));
+      if (result.length == 2) {
+        return result;
+      }
+    }
+  }
+};
+// {4:2,3:1,5:3}
+
+console.log(majorityTwoElement([4, 3, 4, 5, 5, 5]));
+console.log(majorityTwoElement([10, 8, 9, 10, 8, 9, 9]));
+console.log(majorityTwoElement([1, 2, 3, 4, 5, 3, 4]));
+console.log(majorityTwoElement([4, 5, 6]));
+//  [1, 2, 3, 4, 5, 3, 4]
+// [4,5,6]
 
 function majorityTwoElement(nums) {
   const hash = {};
