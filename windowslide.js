@@ -76,20 +76,20 @@ console.log(maxSumArr(arr1, 3));
 //  *
 //  */
 
-// function minSizeSubArray(searchNumber, arr) {
-//   let result = Number.MAX_SAFE_INTEGER;
-//   let left = 0;
-//   let sum = 0;
+function minSizeSubArray(searchNumber, arr) {
+  let result = Number.MAX_SAFE_INTEGER;
+  let left = 0;
+  let sum = 0;
 
-//   for (let i = 0; i < arr.length; i++) {
-//     sum += arr[i];
-//     while (sum >= searchNumber) {
-//       result = Math.min(result, i - left + 1);
-//       sum -= arr[left++];
-//     }
-//   }
-//   return result;
-// }
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+    while (sum >= searchNumber) {
+      result = Math.min(result, i - left + 1);
+      sum -= arr[left++];
+    }
+  }
+  return result;
+}
 
 // const arr2 = [1, 1, 1, 1, 2, 2, 4];
 // //console.log("minsize", minSizeSubArray(4, arr2));
