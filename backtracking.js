@@ -46,7 +46,7 @@
 var duplicateZeros = function (arr) {
   if (arr == null || arr.length == 0) throw new Error("illegal input");
   //move in place, so no extra space
-  debugger;
+  // debugger;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] == 0) {
       //that means must remove last one in arr
