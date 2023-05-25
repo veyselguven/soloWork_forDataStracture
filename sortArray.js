@@ -8,13 +8,17 @@ function getSortValue(vegatable) {
   return vegatable.cost;
 }
 
+const sortOrder = "asc";
+
 data.sort((a, b) => {
   const valueA = getSortValue(a);
   const valueB = getSortValue(b);
+  const reverserOrder = sortOrder === "asc" ? 1 : -1;
+
   if (typeof valueA === "string") {
-    return valueA.localeCompare(valueB);
+    return valueA.localeCompare(valueB) * reverserOrder;
   } else {
-    return valueA - valueB;
+    return (valueA - valueB) * reverserOrder;
   }
 });
 
