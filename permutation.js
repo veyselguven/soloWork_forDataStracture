@@ -37,28 +37,30 @@
 // }
 // //console.log(body);
 // console.log(`${body}fdg`);
-var permute = function (nums) {
-  debugger;
-  // global result
-  const result = [];
+// var permute = function (nums) {
+//   debugger;
+//   // global result
+//   const result = [];
 
-  // dfs recursive helper
-  const dfs = (i, nums) => {
-    // base case
-    if (i === nums.length) {
-      result.push(nums.slice());
-      return;
-    }
-    // [1,2,3];
-    // dfs recursive case
-    for (let j = i; j < nums.length; j++) {
-      [nums[i], nums[j]] = [nums[j], nums[i]];
-      dfs(i + 1, nums);
-      [nums[i], nums[j]] = [nums[j], nums[i]];
-    }
-  };
-  dfs(0, nums);
-  return result;
-};
+//   // dfs recursive helper
+//   const dfs = (i, nums) => {
+//     // base case
+//     if (i === nums.length) {
+//       result.push(nums.slice());
+//       return;
+//     }
+//     // [1,2,3];
+//     // dfs recursive case
+//     for (let j = i; j < nums.length; j++) {
+//       [nums[i], nums[j]] = [nums[j], nums[i]];
+//       dfs(i + 1, nums);
+//       [nums[i], nums[j]] = [nums[j], nums[i]];
+//     }
+//   };
+//   dfs(0, nums);
+//   return result;
+// };
 
-console.log(permute([1, 2, 3]));
+// console.log(permute([1, 2, 3]));
+
+console.log("a" < "b");
