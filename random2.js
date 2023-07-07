@@ -24,3 +24,27 @@ var indexPairs = function (text, words) {
   }
   return res;
 };
+// var findGCD = function(nums) {
+//     let getMax=Math.max(...nums);
+//     let getMin=Math.min(...nums);
+//     let result=1;
+//     for(let i=1; i<=getMax; i++){
+//         if(getMin%i==0 && getMax%i===0){
+//             if(i>result){
+//                 result=i
+//             }
+//         }
+//     }
+//     return result
+// };
+var findGCD = function (nums) {
+  let res = [];
+  let mn = Math.min(...nums);
+  let mx = Math.max(...nums);
+  for (let j = 1; j <= mn; j++) {
+    if (mn % j === 0 && mx % j === 0) {
+      res.push(j);
+    }
+  }
+  return Math.max(...res);
+};
