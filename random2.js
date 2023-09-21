@@ -67,23 +67,57 @@ Space Complexity: O(n+m)
 8. Return maxWord.
 */
 
-var mostCommonWord = function (paragraph, banned) {
-  let bannedSet = new Set(banned);
-  let map = {};
-  let wordArray = paragraph.toLowerCase().match(/[a-z]+/g);
-  for (let i = 0; i < wordArray.length; i++) {
-    if (!bannedSet.has(wordArray[i])) {
-      map[wordArray[i]] = (map[wordArray[i]] | 0) + 1;
-    }
-  }
-  let maxCount = 0;
-  let maxWord = "";
+// var mostCommonWord = function (paragraph, banned) {
+//   let bannedSet = new Set(banned);
+//   let map = {};
+//   let wordArray = paragraph.toLowerCase().match(/[a-z]+/g);
+//   for (let i = 0; i < wordArray.length; i++) {
+//     if (!bannedSet.has(wordArray[i])) {
+//       map[wordArray[i]] = (map[wordArray[i]] | 0) + 1;
+//     }
+//   }
+//   let maxCount = 0;
+//   let maxWord = "";
 
-  for (let key in map) {
-    if (map[key] > maxCount) {
-      maxWord = key;
-      maxCount = map[key];
-    }
+//   for (let key in map) {
+//     if (map[key] > maxCount) {
+//       maxWord = key;
+//       maxCount = map[key];
+//     }
+//   }
+//   return maxWord;
+// };
+// let num = [1, 2, 3, 4, 5];
+// let a = num.splice(2, 0, 9);
+// console.log(a);
+// console.log(num);
+function reductionCost(num) {
+  // debugger;
+  let cost = 0;
+
+  while (num.length > 2) {
+    num.sort((a, b) => {
+      return a - b;
+    });
+
+    const newValue = num.shift() + num.shift();
+    cost += newValue;
+    num.splice(num.length, 0, newValue);
   }
-  return maxWord;
-};
+  return cost + num[0] + num[1];
+}
+
+//console.log(reductionCost([1, 2, 4, 6, 7]));
+const example = [11, 2, 3, 4, 65];
+
+const c = example.slice(1, 3);
+console.log(c);
+console.log(example);
+
+// let b = example.pop();
+// console.log(b);
+// console.log(example);
+
+// let a = example.shift();
+//console.log(a); //11
+//console.log(example); // [ 2, 3, 4, 65 ]
