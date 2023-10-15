@@ -8,21 +8,21 @@ longestDecrease(nums) - Given an array of integers, return the longest streak of
 //  c  n
 // [1, 4, 3, 1, -2, 0, 6, 5]
 //
-// const longestDecrease = (arr) => {
-//   let max = 1;
-//   let currentLength = 1;
-//   for (let i = 0; i < arr.length - 1; i++) {
-//     if (arr[i] > arr[i + 1]) {
-//       currentLength++;
-//       if (currentLength > max) {
-//         max = currentLength;
-//       }
-//     } else {
-//       currentLength = 1;
-//     }
-//   }
-//   return max;
-// };
+const longestDecrease = (arr) => {
+  let max = 1;
+  let currentLength = 1;
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] > arr[i + 1]) {
+      currentLength++;
+      if (currentLength > max) {
+        max = currentLength;
+      }
+    } else {
+      currentLength = 1;
+    }
+  }
+  return max;
+};
 
 // console.log(longestDecrease([6, 5, 4, 3, 2]));
 // console.log(longestDecrease([1, 4, 3, 1, -2, 0, 6, 5]));
@@ -99,3 +99,20 @@ function majorityTwoElement(nums) {
   }
 }
 console.log(majorityTwoElement([1, 2, 3, 4, 5, 3, 4]));
+
+var interpret = function (command) {
+  return command.split("()").join("o").split("(al)").join("al");
+  /* let result="";
+     for(let i=0; i<command.length; i++){
+         if(command[i]==="G"){  
+             result+="G"
+         }else if(command[i]==="(" && command[i+1] === ")"){
+             result+="o"
+             i=i+1;
+         }else{
+             result+="al";
+             i=i+3
+         }
+     }
+ return result */
+};

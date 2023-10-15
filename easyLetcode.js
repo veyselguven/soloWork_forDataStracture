@@ -1,19 +1,19 @@
-// var pivotIndex = function (nums) {
-//   //debugger;
-//   var sum = nums.reduce((a, b) => a + b);
-//   let leftSum = 0;
-//   for (var i = 0; i < nums.length; i++) {
-//     sum = sum - nums[i];
+var pivotIndex = function (nums) {
+  //debugger;
+  var sum = nums.reduce((a, b) => a + b);
+  let leftSum = 0;
+  for (var i = 0; i < nums.length; i++) {
+    sum = sum - nums[i];
 
-//     if (leftSum === sum) {
-//       return i;
-//     }
+    if (leftSum === sum) {
+      return i;
+    }
 
-//     leftSum = leftSum + nums[i];
-//   }
+    leftSum = leftSum + nums[i];
+  }
 
-//   return -1;
-// };
+  return -1;
+};
 
 // console.log(pivotIndex([1, 7, 3, 6, 5, 6]));
 
@@ -21,23 +21,23 @@
 
 // aba      odd
 
-// var longestPalindrome = function (str) {
-//   if (str.length < 1 || str === null) return "";
-//   let longest = "";
+var longestPalindrome = function (str) {
+  if (str.length < 1 || str === null) return "";
+  let longest = "";
 
-//   for (let i = 0; i < str.length; i++) {
-//     let addPalindrom = expandFromCenter(str, i, i);
-//     let evenPalindrom = expandFromCenter(str, i - 1, i);
+  for (let i = 0; i < str.length; i++) {
+    let addPalindrom = expandFromCenter(str, i, i);
+    let evenPalindrom = expandFromCenter(str, i - 1, i);
 
-//     if (addPalindrom.length > longest.length) {
-//       longest = addPalindrom;
-//     }
-//     if (evenPalindrom.length > longest.length) {
-//       longest = evenPalindrom;
-//     }
-//   }
-//   return longest;
-// };
+    if (addPalindrom.length > longest.length) {
+      longest = addPalindrom;
+    }
+    if (evenPalindrom.length > longest.length) {
+      longest = evenPalindrom;
+    }
+  }
+  return longest;
+};
 // // a  a b  b  a  a
 // //      ^  ^
 // const expandFromCenter = (str, left, right) => {
