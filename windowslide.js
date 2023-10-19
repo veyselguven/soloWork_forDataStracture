@@ -49,25 +49,25 @@ console.log(maxSumArr(arr1, 3));
  *
  *
  */
-// function maxSumArr(arr, num) {
-//   let maxSum = 0;
-//   let tempSum = 0;
-//   if (arr.length < num) return null;
-//   for (let i = 0; i < num; i++) {
-//     tempSum += arr[i];
-//   }
-//   //console.log("tempSum", tempSum);
-//   maxSum = tempSum;
-//   for (let i = num; i < arr.length; i++) {
-//     tempSum = tempSum - arr[i - num] + arr[i];
-//     // console.log("forSum", tempSum);
-//     maxSum = Math.max(tempSum, maxSum);
-//     // console.log("max", maxSum);
-//   }
-//   return maxSum;
-// }
-// //console.log(maxSumArr([1, 2, 3, 5, 4, 8, 6, 2], 2));
-// //maxSumArr([1, 2, 3, 5, 4, 8, 6, 2], 3);
+function maxSumArr(arr, num) {
+  let maxSum = 0;
+  let tempSum = 0;
+  if (arr.length < num) return null;
+  for (let i = 0; i < num; i++) {
+    tempSum += arr[i];
+  }
+  //console.log("tempSum", tempSum);
+  maxSum = tempSum;
+  for (let i = num; i < arr.length; i++) {
+    tempSum = tempSum - arr[i - num] + arr[i];
+    // console.log("forSum", tempSum);
+    maxSum = Math.max(tempSum, maxSum);
+    // console.log("max", maxSum);
+  }
+  return maxSum;
+}
+//console.log(maxSumArr([1, 2, 3, 5, 4, 8, 6, 2], 2));
+//maxSumArr([1, 2, 3, 5, 4, 8, 6, 2], 3);
 // /*
 //  *
 //  *
