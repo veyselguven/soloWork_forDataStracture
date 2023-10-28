@@ -53,3 +53,5 @@ function getCheapestCost(root) {
 }
 
 */
+
+console.log(4 % 2);
