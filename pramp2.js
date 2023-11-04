@@ -42,3 +42,23 @@ var commonChars = function (words) {
 
   return result;
 };
+
+function solution(a, k) {
+  const remainderCount = new Array(k).fill(0);
+  let count = 0;
+
+  for (const num of a) {
+    const remainder = ((num % k) + k) % k;
+    const complementRemainder = (k - remainder) % k;
+
+    count += remainderCount[complementRemainder];
+    remainderCount[remainder]++;
+  }
+
+  return count;
+}
+
+// Example usage
+const a = [1, 2, 3, 4, 5];
+const k = 3;
+console.log(solution(a, k)); // Output: 4
