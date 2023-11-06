@@ -62,3 +62,62 @@ function solution(a, k) {
 const a = [1, 2, 3, 4, 5];
 const k = 3;
 console.log(solution(a, k)); // Output: 4
+
+var letterCombinations = function (digits) {
+  if (!digits) return [];
+
+  const letterMap = {
+    2: "abc",
+    3: "def",
+    4: "ghi",
+    5: "jkl",
+    6: "mno",
+    7: "pqrs",
+    8: "tuv",
+    9: "wxyz",
+  };
+
+  const result = [];
+
+  const backtrack = (combination, nextDigits) => {
+    if (nextDigits.length === 0) {
+      result.push(combination);
+    } else {
+      const currentDigit = nextDigits[0];
+      const letters = letterMap[currentDigit];
+
+      for (let i = 0; i < letters.length; i++) {
+        const letter = letters[i];
+        backtrack(combination + letter, nextDigits.slice(1));
+      }
+    }
+  };
+
+  backtrack("", digits);
+  return result;
+};
+
+var numberOfPoints = function (nums) {
+  let obj = {};
+  let count = 0;
+  for (let x of nums) {
+    for (let i = x[0]; i <= x[1]; i++) {
+      if (obj[i] == undefined) count++;
+      if (!(obj[i] in obj)) {
+        obj[i] = 0;
+      }
+    }
+  }
+  return count;
+};
+var plusOne = function (digits) {
+  for (let i = digits.length - 1; i >= 0; i--) {
+    if (digits[i] < 9) {
+      digits[i]++;
+      return digits;
+    }
+    digits[i] = 0;
+  }
+  digits.unshift(1);
+  return digits;
+};
