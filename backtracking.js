@@ -81,3 +81,13 @@ const customFlat = (arr, depth = 1) => {
 
 // [].concat(...arr)
 // arr.flat(2)
+
+const data = [
+  { name: "Veysel", id: "Naber", completed: false },
+  { name: "Alex", id: "Basks", completed: true },
+  { name: "Merve", id: "asdf", completed: true },
+  { name: "Hatun", id: "sdfsjnadno", completed: true },
+  { name: "Robin", id: "asfnofao", completed: true },
+];
+
+console.log(...data);
