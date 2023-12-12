@@ -53,3 +53,30 @@ var removeOuterParentheses = function (S) {
 
   return result;
 };
+var highFive = function (items) {
+  let scores = {};
+
+  for (let i = 0; i < items.length; i++) {
+    let student_id = items[i][0];
+    let marks = items[i][1];
+    // Here I'm adding the student_id as a key to scores hash table if it doesn't exist already with an empty array as value
+    if (!scores[student_id]) scores[student_id] = [];
+    // Here I'm pushing the marks to a student_id key, if it exists in scores hash table
+    scores[student_id].push(marks);
+  }
+
+  let result = [];
+
+  Object.keys(scores).forEach((key) => {
+    let avg = 0;
+    // Sort all the marks in descending order
+    scores[key].sort((a, b) => b - a);
+    for (let i = 0; i < 5; i++) {
+      avg += scores[key][i];
+    }
+    avg = Math.floor(avg / 5);
+    result.push([key, avg]);
+  });
+
+  return result;
+};
