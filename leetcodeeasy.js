@@ -80,3 +80,32 @@ var highFive = function (items) {
 
   return result;
 };
+var isBoomerang = function (points) {
+  const [[x1, y1], [x2, y2], [x3, y3]] = points;
+  return (y1 - y2) * (x1 - x3) != (y1 - y3) * (x1 - x2);
+};
+// var maximumWealth = function(accounts) {
+//      let max=-Infinity;
+
+//     for(let account of accounts){
+//         let total=0;
+//         for(let i=0; i<account.length; i++){
+//             total+=account[i];
+
+//         }
+//             if(total>max){
+//             max=total
+//              }
+//      }
+//      return max
+
+// };
+
+var maximumWealth = function (accounts) {
+  let a = accounts.map((account) => {
+    console.log(account);
+    return account.reduce((acc, b) => acc + b, 0);
+    // console.log(b)
+  });
+  return Math.max(...a);
+};
