@@ -137,3 +137,21 @@ var countPrimes = function (n) {
   }
   return count;
 };
+var findLucky = function (arr) {
+  let hasMap = {};
+  for (let i = 0; i < arr.length; i++) {
+    if (!(arr[i] in hasMap)) {
+      hasMap[arr[i]] = 1;
+    } else {
+      hasMap[arr[i]]++;
+    }
+  }
+  let max = -Infinity;
+  console.log(hasMap);
+  for (let i in hasMap) {
+    if (Number(i) === hasMap[i]) {
+      max = Math.max(max, hasMap[i]);
+    }
+  }
+  return max === -Infinity ? -1 : max;
+};
