@@ -109,3 +109,31 @@ var maximumWealth = function (accounts) {
   });
   return Math.max(...a);
 };
+
+var removeOuterParentheses = function (s) {
+  let result = "";
+  let ticker = 0;
+  for (el of s) {
+    el == "(" ? ticker++ : 0;
+    ticker > 1 ? (result += el) : 0;
+    el == ")" ? ticker-- : 0;
+  }
+  return result;
+};
+
+var countPrimes = function (n) {
+  if (n <= 2) return 0;
+  function isPrime(num) {
+    for (let i = 3; i <= Math.sqrt(num); i += 2) {
+      if (num % i === 0) return false;
+    }
+    return true;
+  }
+
+  let count = 1;
+
+  for (let i = 3; i < n; i += 2) {
+    if (isPrime(i)) count++;
+  }
+  return count;
+};
