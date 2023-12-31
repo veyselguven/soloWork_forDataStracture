@@ -66,3 +66,40 @@ const charactersByName = characters.reduce((acc, curr) => {
 }, 0);
 
 console.log(charactersByName); //52
+const runningSum = (nums) => {
+  nums.reduce((acc, curr, index, arr) => {
+    return (arr[index] += acc);
+  });
+  return nums;
+};
+
+// var runningSum = function(nums) {
+//     let result=[nums[0]];
+//     let sum=nums[0];
+
+//     for(let i=1; i<nums.length; i++){
+//         sum+=nums[i]
+//         result.push(sum)
+//     }
+//     return result
+// };
+
+// Array in-place solution || O(1) extra space
+
+// var runningSum = function(nums) {
+//     for(let i=1; i<nums.length; i++){
+//         nums[i] = nums[i-1] + nums[i];
+//     }
+//     return nums;
+// };
+
+var prefixesDivBy5 = function (nums) {
+  let result = [];
+  let binary = 0;
+  for (let num of nums) {
+    binary = (binary % 5) * 2 + num;
+    let checkBinary = binary % 5 == 0;
+    result.push(checkBinary);
+  }
+  return result;
+};
