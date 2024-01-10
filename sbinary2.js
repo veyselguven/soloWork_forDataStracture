@@ -102,3 +102,37 @@ if(!root) return [];
 
 breadthFirstValues(a);
 //    -> ['a', 'b', 'c', 'd', 'e', 'f']
+
+var findTarget = function (root, k) {
+  let result = [];
+  let stack = [root];
+  while (stack.length > 0) {
+    let current = stack.pop();
+    if (current.right) stack.push(current.right);
+    if (current.left) stack.push(current.left);
+    result.push(current.val);
+  }
+  console.log(result);
+
+  let hasMap = {};
+  for (let i = 0; i < result.length; i++) {
+    let value = result[i];
+    let complementPair = k - value;
+    if (hasMap[complementPair] !== undefined) {
+      return true;
+    } else {
+      hasMap[value] = i;
+    }
+  }
+  return false;
+};
+/* 
+  for(let i=0; i<result.length; i++){
+      for(let j=i+1; j<result.length; j++){
+          if(result[i]+result[j]===k){
+              return true
+          }
+      }
+  }
+  return false
+*/
