@@ -57,4 +57,41 @@ var rotate = function (nums, k) {
   revNums(nums, k, nums.length - 1);
 };
 
+console.log(rotate);
 console.log(2 % 4);
+
+var longestCommonSubsequence = function (text1, text2) {
+  let n1 = text1.length;
+  let n2 = text2.length;
+
+  let dp = new Array(n1 + 1);
+
+  for (let i = 0; i < n1 + 1; i++) {
+    dp[i] = new Array(n2 + 1).fill(0);
+  }
+  for (let i = 1; i <= n1; i++) {
+    for (let j = 1; j <= n2; j++) {
+      if (text1[i - 1] === text2[j - 1]) dp[i][j] = dp[i - 1][j - 1] + 1;
+      else dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+    }
+  }
+  return dp[n1][n2];
+};
+// var longestCommonSubsequence = function(text1, text2) {
+//     let text1Hash=text1.split("").reduce((acc,curr)=>{
+//         if(acc[curr]){
+//             acc[curr]++
+//         }else{
+//             acc[curr]=1
+//         }
+//         return acc
+//     },{})
+//     console.log(text1Hash)
+//     let count=0
+//     for(let i=0; i<text2.length; i++){
+//         if(text2[i] in text1Hash){
+//             count++
+//         }
+//     }
+//     return count
+// };
