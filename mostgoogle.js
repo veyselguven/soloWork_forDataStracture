@@ -95,3 +95,25 @@ var longestCommonSubsequence = function (text1, text2) {
 //     }
 //     return count
 // };
+
+// sort().  nlogn Time
+// On.    space
+var merge = function (intervals) {
+  intervals.sort((a, b) => a[0] - b[0]);
+  let result = [intervals[0]];
+  //console.log(result)
+  for (let interval of intervals) {
+    let e1 = result[result.length - 1][1];
+    //  console.log("e1=>",e1)
+    let s2 = interval[0];
+    // console.log("s2=>",s2)
+    let e2 = interval[1];
+    //  console.log("e2=>",e2)
+    if (e1 >= s2) {
+      result[result.length - 1][1] = Math.max(e1, e2);
+    } else {
+      result.push(interval);
+    }
+  }
+  return result;
+};
