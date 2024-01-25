@@ -118,17 +118,29 @@ var merge = function (intervals) {
   return result;
 };
 
+var countSegments = function (s) {
+  // Split the input string by spaces
+  const segments = s.split(" ");
 
-var countSegments = function(s) {
-     // Split the input string by spaces
-    const segments = s.split(' ');
-    
-    let count = 0;
-    // Iterate through the segments and count non-empty ones
-    for (const segment of segments) {
-        if (segment !== '') {
-        count++;
-        }
-    }   
-    return count;
+  let count = 0;
+  // Iterate through the segments and count non-empty ones
+  for (const segment of segments) {
+    if (segment !== "") {
+      count++;
+    }
+  }
+  return count;
+};
+let minTimeToVisitAllPoints = function (points) {
+  //  points = [[1,1],[3,4],[-1,0]]
+  let i = 0;
+  let result = 0;
+  while (i < points.length - 1) {
+    let x = Math.abs(points[i][0] - points[i + 1][0]);
+    let y = Math.abs(points[i][1] - points[i + 1][1]);
+    result = result + Math.max(x, y);
+    i++;
+  }
+
+  return result;
 };
