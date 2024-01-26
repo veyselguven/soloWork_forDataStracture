@@ -93,3 +93,37 @@
 //console.log(selfDividingNumbers(1, 22));
 
 console.log(NaN == NaN);
+
+function missingNumbers(arr, brr) {
+  // Write your code here
+  let hash1 = arr.reduce((acc, curr) => {
+    if (acc[curr]) {
+      acc[curr]++;
+    } else {
+      acc[curr] = 1;
+    }
+    return acc;
+  }, {});
+  let hash2 = brr.reduce((acc, curr) => {
+    if (acc[curr]) {
+      acc[curr]++;
+    } else {
+      acc[curr] = 1;
+    }
+    return acc;
+  }, {});
+  console.log("hash1=>", hash1);
+  console.log("hash2=>", hash2);
+  let result = [];
+
+  for (let i in hash2) {
+    if (hash2[i] !== hash1[i] || !hash1[i]) {
+      result.push(i) * hash1[i];
+    }
+  }
+  return result;
+}
+let arr = [7, 2, 5, 3, 5, 3];
+let brr = [7, 2, 5, 4, 6, 3, 5, 3];
+
+console.log(missingNumbers(arr, brr));
