@@ -136,3 +136,23 @@ var findTarget = function (root, k) {
   }
   return false
 */
+
+var increasingBST = function (root) {
+  let nodes = [];
+  inOrder(root);
+  function inOrder(root) {
+    if (root) {
+      inOrder(root.left);
+      nodes.push(root);
+      inOrder(root.right);
+    }
+    return;
+  }
+  for (let i = 0; i < nodes.length - 1; i++) {
+    nodes[i].left = null;
+    nodes[i].right = nodes[i + 1];
+  }
+  nodes[nodes.length - 1].left = null;
+  nodes[nodes.length - 1].right = null;
+  return nodes[0];
+};
