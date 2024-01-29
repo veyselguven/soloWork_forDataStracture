@@ -157,3 +157,9 @@ var flipAndInvertImage = function (images) {
   }
   return images;
 };
+
+var flipAndInvertImage2 = function (A) {
+  return A.map((a) => {
+    return a.reverse().map((b) => (b == 1 ? 0 : 1));
+  });
+};
