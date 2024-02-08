@@ -195,3 +195,43 @@ function minSizeSubArray(searchNumber, arr) {
 //   s = 20;
 
 // console.log(findArrayQuadruplet(arr, s));
+/*
+ var lengthOfLongestSubstring = function (s) {
+  let result = "";
+
+  for (let i = 0; i < s.length; i++) {
+    let first = s[i];
+    let second = s[i + 1];
+    if (first !== second && !result.includes(first)) {
+      result += first;
+    }
+  }
+  return result.length;
+}; 
+*/
+
+var lengthOfLongestSubstring = function (s) {
+  let max = 0;
+  let windowStart = 0;
+  const soFar = {};
+  for (let i = 0; i < s.length; i++) {
+    let element = s[i];
+    soFar[element] = soFar[element] + 1 || 1;
+    // if (!soFar[element]) {
+    //   soFar[element] = 1;
+    // } else if (soFar[element]) {
+    //   soFar[element] += 1;
+    // }
+    while (soFar[element] > 1) {
+      let char = s[windowStart];
+      if (soFar[char] > 1) {
+        soFar[char]--;
+      } else {
+        delete soFar[char];
+      }
+      windowStart++;
+    }
+    max = Math.max(max, i - windowStart + 1);
+  }
+  return max;
+};
