@@ -69,3 +69,32 @@ var minimumAbsDifference = function (arr) {
 };
 
 minimumAbsDifference([1, 3, 6, 13, 15]);
+var uncommonFromSentences = function (s1, s2) {
+  s1 = s1.split(" ");
+  s2 = s2.split(" ");
+  let getObj1 = s1.reduce((acc, curr) => {
+    if (acc[curr]) {
+      acc[curr]++;
+    } else {
+      acc[curr] = 1;
+    }
+    return acc;
+  }, {});
+  console.log(getObj1);
+  let getObj2 = s2.reduce((acc, curr) => {
+    if (acc[curr]) {
+      acc[curr]++;
+    } else {
+      acc[curr] = 1;
+    }
+    return acc;
+  }, getObj1);
+  console.log(getObj2);
+  let result = [];
+  for (let i in getObj2) {
+    if (getObj2[i] == 1) {
+      result.push(i);
+    }
+  }
+  return result;
+};
