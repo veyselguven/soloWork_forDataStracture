@@ -154,3 +154,4 @@ var majorityElement = function (nums) {
     }
   }
 };
+
