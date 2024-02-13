@@ -1,12 +1,12 @@
 let array = [1, 2, 3, 4, 2, 5, 6, 1];
 let uniqueArray = [...new Set(array)];
-console.log(uniqueArray);
+//console.log(uniqueArray);
 
 let array2 = [1, 2, 3, 4, 2, 5, 6, 1];
 let uniqueArray2 = array.filter(
   (value, index, self) => self.indexOf(value) === index
 );
-console.log(uniqueArray2);
+//console.log(uniqueArray2);
 
 let array3 = [1, 2, 3, 4, 2, 5, 6, 1];
 let uniqueArray3 = array.reduce((accumulator, currentValue) => {
@@ -15,7 +15,7 @@ let uniqueArray3 = array.reduce((accumulator, currentValue) => {
   }
   return accumulator;
 }, []);
-console.log(uniqueArray3);
+//console.log(uniqueArray3);
 
 //Any of these methods will give you an array without duplicate numbers. Choose the one that fits your needs and coding style the best.
 
@@ -36,7 +36,7 @@ function findDuplicates(arr) {
 }
 
 const myArray = [1, 2, 3, 4, 5, 2, 7, 8, 9, 4];
-console.log(findDuplicates(myArray));
+//console.log(findDuplicates(myArray));
 
 function findDuplicates2(arr) {
   let frequency = {};
@@ -54,7 +54,7 @@ function findDuplicates2(arr) {
 }
 
 const myArray2 = [1, 2, 3, 4, 5, 2, 7, 8, 9, 4];
-console.log(findDuplicates(myArray2));
+//console.log(findDuplicates(myArray2));
 
 function findDuplicates3(arr) {
   let uniqueSet = new Set(arr);
@@ -62,4 +62,40 @@ function findDuplicates3(arr) {
 }
 
 const myArray3 = [1, 2, 3, 4, 5, 2, 7, 8, 9, 4];
-console.log(findDuplicates(myArray));
+//console.log(findDuplicates(myArray));
+
+let newArray1 = new Array(5); // Creates an array with length 5, but all elements are initially undefined
+let newArray2 = new Array(5).fill(0); // Creates an array with length 5, initialized with 0
+
+function maxMin(k, arr) {
+  // Write your code here
+  //[1,2,1,2,1]
+  arr = arr.sort((a, b) => a - b);
+  let newArray = new Array(k);
+  for (let i = 0; i < newArray.length; i++) {
+    newArray[i] = arr[i];
+  }
+  console.log(newArray);
+}
+let k = 2;
+arr = [1, 4, 7, 2];
+maxMin(k, arr);
+
+// function maxMin(k, a) {
+//     let n = a.length;
+//     let min = Infinity;
+//     a.sort((a, b) => a - b);
+//     for (let i = 0; i < n - k + 1; i++) {
+//         min = Math.min(a[i + k - 1] - a[i], min);
+//     }
+//     return min;
+// }
+
+// function maxMin(k, arr) {
+//   let min = Number.POSITIVE_INFINITY
+//   arr.sort((a, b) => a - b)
+//   for (let i = 0; i < arr.length - (k - 1); i++) {
+//     min = Math.min(min, arr[i + k - 1] - arr[i])
+//   }
+//   return min
+// }
