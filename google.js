@@ -41,7 +41,7 @@ const tokens = {
   $ANIMAL$: "dog",
 };
 //console.log(tokenReplace("Walk the $ANIMAL$ in the $LOCATION$!", tokens));
-console.log("23" == "23");
+//console.log("23" == "23");
 
 // Time Complexity O(n)
 // Space Complexity O(1)
@@ -82,3 +82,20 @@ var checkInnerPalindrome = function (leftPointer, rightPointer, s) {
   }
   return true;
 };
+
+const isPowerOfFour = (number) => {
+  if (number < 1) {
+    return false; // Negative numbers and 0 are not powers of 4
+  }
+
+  while (number !== 1) {
+    if (number % 4 !== 0) {
+      return false; // If the remainder is not 0, it's not a power of 4
+    }
+    number /= 4;
+  }
+
+  return true;
+};
+
+console.log(isPowerOfFour(64));
