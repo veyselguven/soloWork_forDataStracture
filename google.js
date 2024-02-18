@@ -97,5 +97,11 @@ const isPowerOfFour = (number) => {
 
   return true;
 };
+const isPowerOfFour2 = (number) => {
+  if (number == 1) return false;
+  if (n <= 0) return false;
+  if (n % 4 !== 0) return false;
+  return isPowerOfFour(n / 4);
+};
 
 console.log(isPowerOfFour(64));
