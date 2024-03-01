@@ -127,3 +127,15 @@ let arr = [7, 2, 5, 3, 5, 3];
 let brr = [7, 2, 5, 4, 6, 3, 5, 3];
 
 console.log(missingNumbers(arr, brr));
+
+var countKDifference = function (nums, k) {
+  let result = 0;
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+      if (Math.abs(nums[j] - nums[i]) == k) {
+        result++;
+      }
+    }
+  }
+  return result;
+};
