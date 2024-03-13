@@ -214,3 +214,31 @@ function removeAt2(index) {
 
   this.size--;
 }
+
+var removeZeroSumSublists = function (head) {
+  const dummy = {};
+  dummy.next = head;
+  const hm = new Map();
+  let pSum = 0;
+  hm.set(pSum, dummy);
+
+  while (head) {
+    pSum += head.val;
+    if (hm.has(pSum)) {
+      // remove entries
+      let to_remove = hm.get(pSum).next,
+        SUM = pSum;
+      while (to_remove !== head) {
+        SUM += to_remove.val;
+        hm.delete(SUM);
+        to_remove = to_remove.next;
+      }
+      // draws link(delete nodes)
+      hm.get(pSum).next = head.next;
+    } else {
+      hm.set(pSum, head).next = head.next;
+    }
+    head = head.next;
+  }
+  return dummy.next;
+};

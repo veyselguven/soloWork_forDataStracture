@@ -33,3 +33,10 @@ var islandPerimeter = function (grid) {
 3.Return perimeter   
 
  */
+// let is block scope and we have different i has each different itaration
+// since var we have one i for entire for loop
+for (var i = 0; i < 3; i++) {
+  setTimeout(() => {
+    console.log(i);
+  }, 1000);
+}
