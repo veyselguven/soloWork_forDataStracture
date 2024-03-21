@@ -46,3 +46,16 @@ function migratoryBirds(arr) {
 }
 
 console.log(migratoryBirds([1, 4, 4, 4, 5, 3]));
+const maximum69Number = (num) => {
+  let arr = [...String(num)];
+  console.log("num", arr);
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === "6") {
+      arr[i] = "9";
+      return Number(arr.join(""));
+    }
+  }
+  return num;
+};
+
+maximum69Number(9669);
