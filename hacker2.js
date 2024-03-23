@@ -58,4 +58,25 @@ const maximum69Number = (num) => {
   return num;
 };
 
-maximum69Number(9669);
+// maximum69Number(9669);
+
+function closestNumbers(arr) {
+  let finMindDif = +Infinity;
+  arr = arr.sort((a, b) => a - b);
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      finMindDif = Math.min(Math.abs(arr[i] - arr[j]), finMindDif);
+    }
+  }
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (Math.abs(arr[i] - arr[j]) == finMindDif) {
+        result.push(arr[i], arr[j]);
+      }
+    }
+  }
+  return result;
+}
+
+console.log(closestNumbers([5, 2, 3, 4, 1]));
