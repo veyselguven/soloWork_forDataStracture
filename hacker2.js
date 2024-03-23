@@ -60,23 +60,43 @@ const maximum69Number = (num) => {
 
 // maximum69Number(9669);
 
+// function closestNumbers(arr) {
+//   let finMindDif = +Infinity;
+//   arr = arr.sort((a, b) => a - b);
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = i + 1; j < arr.length; j++) {
+//       finMindDif = Math.min(Math.abs(arr[i] - arr[j]), finMindDif);
+//     }
+//   }
+//   let result = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = i + 1; j < arr.length; j++) {
+//       if (Math.abs(arr[i] - arr[j]) == finMindDif) {
+//         result.push(arr[i], arr[j]);
+//       }
+//     }
+//   }
+//   return result;
+// }
+
 function closestNumbers(arr) {
-  let finMindDif = +Infinity;
-  arr = arr.sort((a, b) => a - b);
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = i + 1; j < arr.length; j++) {
-      finMindDif = Math.min(Math.abs(arr[i] - arr[j]), finMindDif);
-    }
-  }
+  arr.sort((a, b) => a - b); // Sort the array
+
+  let minDiff = Infinity;
   let result = [];
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = i + 1; j < arr.length; j++) {
-      if (Math.abs(arr[i] - arr[j]) == finMindDif) {
-        result.push(arr[i], arr[j]);
-      }
+
+  // Iterate through the array to find the minimum difference
+  for (let i = 1; i < arr.length; i++) {
+    const diff = arr[i] - arr[i - 1];
+    if (diff < minDiff) {
+      minDiff = diff;
+      result = [arr[i - 1], arr[i]]; // Update result with new pair
+    } else if (diff === minDiff) {
+      // If there are multiple pairs with the same minimum difference, add them to result
+      result.push(arr[i - 1], arr[i]);
     }
   }
+
   return result;
 }
-
 console.log(closestNumbers([5, 2, 3, 4, 1]));
