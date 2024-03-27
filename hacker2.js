@@ -80,6 +80,7 @@ const maximum69Number = (num) => {
 // }
 
 function closestNumbers(arr) {
+  // debugger;
   arr.sort((a, b) => a - b); // Sort the array
 
   let minDiff = Infinity;
