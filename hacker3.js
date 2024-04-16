@@ -39,3 +39,11 @@ var largestAltitude = function (gain) {
 //     }
 //    return Math.max(...result)
 // };
+var sumOfTheDigitsOfHarshadNumber = function (x) {
+  let stringArray = String(x).split("");
+  let total = stringArray.reduce((acc, curr) => {
+    return acc + Number(curr);
+  }, 0);
+  console.log(total);
+  return x % total === 0 ? total : -1;
+};
