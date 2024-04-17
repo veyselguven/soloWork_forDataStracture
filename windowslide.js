@@ -250,3 +250,19 @@ var maxPower = function (s) {
 
   return power;
 };
+// time O(n^2) space O(1)
+var maxPower2 = function (s) {
+  let max = 1;
+  let count = 1;
+
+  for (let i = 0; i < s.length - 1; i++) {
+    if (s[i] === s[i + 1]) {
+      count++;
+      max = Math.max(count, max);
+    } else {
+      count = 1;
+    }
+  }
+
+  return max;
+};
