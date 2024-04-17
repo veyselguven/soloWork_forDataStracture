@@ -47,3 +47,13 @@ var sumOfTheDigitsOfHarshadNumber = function (x) {
   console.log(total);
   return x % total === 0 ? total : -1;
 };
+
+
+var countElements = function(arr) {
+    let total=0;
+    for(let i=0; i<arr.length; i++){
+        let current=arr[i];
+        if(arr.includes(current+1)) total++
+    }
+    return total
+};
