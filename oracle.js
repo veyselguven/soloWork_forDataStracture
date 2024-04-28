@@ -40,3 +40,22 @@ for (var i = 0; i < 3; i++) {
     console.log(i);
   }, 1000);
 }
+
+// var kidsWithCandies = function(candies, extraCandies) {
+//     let getMax=Math.max(...candies);
+//     console.log("getMax=>",getMax);
+//     let result=[]
+//     for(let i=0; i<candies.length; i++){
+//         if(candies[i]+extraCandies >= getMax){
+//             result.push(true)
+//         }else{
+//             result.push(false)
+//         }
+//     }
+//     return result
+// };
+
+var kidsWithCandies = function (candies, extraCandies) {
+  const max = Math.max(...candies);
+  return candies.map((item, index) => item + extraCandies >= max);
+};
