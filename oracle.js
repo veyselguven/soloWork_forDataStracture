@@ -59,3 +59,13 @@ var kidsWithCandies = function (candies, extraCandies) {
   const max = Math.max(...candies);
   return candies.map((item, index) => item + extraCandies >= max);
 };
+
+var luckyNumbers = function (matrix) {
+  for (let i = 0; i < matrix.length; i++) {
+    // loop through the every element of the array matrix
+    let min = Math.min(...matrix[i]); // initialize min for minimum number from every element of array matrix
+    let index = matrix[i].indexOf(min); // initialize index of min in every element of array matrix
+    if (matrix.every((arr) => arr[index] <= min)) return [min]; // if every element of array in which every array of index is less than or equal to min then return array of min
+  }
+  return []; // return empty array
+};
