@@ -18,3 +18,13 @@ var summaryRanges = function (nums) {
 };
 
 console.log(summaryRanges([0, 1, 2, 4, 5, 7]));
+
+var maxSubArray = function (nums) {
+  let currentSum = nums[0];
+  let max = nums[0];
+  for (let i = 1; i < nums.length; i++) {
+    currentSum = Math.max(currentSum + nums[i], nums[i]);
+    max = Math.max(currentSum, max);
+  }
+  return max;
+};
