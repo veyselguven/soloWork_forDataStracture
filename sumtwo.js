@@ -25,3 +25,19 @@ function two(nums, target) {
   }
 }
 let x = "x102";
+
+var reversePrefix = function (word, ch) {
+  let getIndex = word.indexOf(ch);
+  console.log(getIndex);
+  if (getIndex < 0) {
+    return word;
+  }
+  const getSlice =
+    word
+      .slice(0, getIndex + 1)
+      .split("")
+      .reverse()
+      .join("") + word.slice(getIndex + 1);
+  console.log(getSlice);
+  return getSlice;
+};
