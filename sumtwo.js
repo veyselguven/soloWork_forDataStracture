@@ -41,3 +41,18 @@ var reversePrefix = function (word, ch) {
   console.log(getSlice);
   return getSlice;
 };
+var reversePrefix2 = function (word, ch) {
+  const index = word.indexOf(ch);
+  if (index === -1) return word;
+  let result = "";
+
+  for (let i = 0; i < word.length; i++) {
+    if (i <= index) {
+      result = word[i] + result;
+    } else {
+      result += word[i];
+    }
+  }
+
+  return result;
+};
