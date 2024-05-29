@@ -114,3 +114,24 @@ var scoreOfString = function (s) {
 
   return sum;
 };
+// var isPalindrome = function(x) { //https: //leetcode.com/problems/shift-2d-grid/
+//   return x == x.toString().split("").reverse().join("");
+// };
+
+var isPalindrome = function (x) {
+  //TIME-COMPLEXITY: O(n);
+  //MEMORY: O(1);
+  const str = x.toString();
+  let leftIndex = 0;
+  let rightIndex = str.length - 1;
+
+  while (leftIndex < rightIndex) {
+    if (str[leftIndex] !== str[rightIndex]) {
+      return false;
+    }
+    leftIndex++;
+    rightIndex--;
+  }
+
+  return true;
+};
