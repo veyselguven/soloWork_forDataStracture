@@ -1,6 +1,6 @@
 let array = [1, 2, 3, 4, 2, 5, 6, 1];
 let uniqueArray = [...new Set(array)];
-//console.log(uniqueArray);
+console.log("uniqueArray=>", uniqueArray);
 
 let array2 = [1, 2, 3, 4, 2, 5, 6, 1];
 let uniqueArray2 = array.filter(
@@ -15,7 +15,7 @@ let uniqueArray3 = array.reduce((accumulator, currentValue) => {
   }
   return accumulator;
 }, []);
-//console.log(uniqueArray3);
+console.log("uniqueArray3=>", uniqueArray3);
 
 //Any of these methods will give you an array without duplicate numbers. Choose the one that fits your needs and coding style the best.
 
@@ -23,7 +23,6 @@ let uniqueArray3 = array.reduce((accumulator, currentValue) => {
 
 function findDuplicates(arr) {
   let duplicates = [];
-
   for (let i = 0; i < arr.length; i++) {
     for (let j = i + 1; j < arr.length; j++) {
       if (arr[i] === arr[j]) {
@@ -31,7 +30,6 @@ function findDuplicates(arr) {
       }
     }
   }
-
   return duplicates;
 }
 

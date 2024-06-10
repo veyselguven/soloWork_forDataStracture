@@ -108,7 +108,6 @@ Output: 2
 Explanation: "baabb" -> "b" -> "". 
 Remove palindromic subsequence "baab" then "b".
 
-
 */
 
 var removePalindromeSub = function (s) {

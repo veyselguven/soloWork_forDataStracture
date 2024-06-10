@@ -135,6 +135,7 @@ console.log(lengthOfLIS([4, 18, 20, 10, 12, 15, 19]));
 // };
 
 // console.log(lengthOfLIS([10, 9, 2, 5, 3, 7, 101, 18]));
+
 var majorityElement = function (nums) {
   let map = {};
 
@@ -154,4 +155,3 @@ var majorityElement = function (nums) {
     }
   }
 };
-

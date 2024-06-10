@@ -84,7 +84,6 @@
         for (let i = 1; i < nums.length; i++) {
           let calc = Math.max(nums[i], accNum + nums[i]);
           if (calc > maxValue) maxValue = calc;
-
           accNum = calc;
         }
         //iterate through each number, make a decision
