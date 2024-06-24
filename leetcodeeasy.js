@@ -155,3 +155,52 @@ var findLucky = function (arr) {
   }
   return max === -Infinity ? -1 : max;
 };
+
+function maximumSum(a, m) {
+  const n = a.length;
+  let maxSum = 0;
+  let prefixSum = 0;
+
+  // Sorted set for prefix sums
+  let prefixSums = new Set();
+  prefixSums.add(0); // Initial prefix sum
+
+  for (let i = 0; i < n; i++) {
+    prefixSum = (prefixSum + a[i]) % m;
+    maxSum = Math.max(maxSum, prefixSum);
+
+    // Find the smallest prefix sum greater than current prefixSum
+    for (let ps of prefixSums) {
+      if (ps >= prefixSum + 1) {
+        maxSum = Math.max(maxSum, (prefixSum - ps + m) % m);
+        break;
+      }
+    }
+
+    // Add current prefixSum to the set
+    prefixSums.add(prefixSum);
+  }
+
+  return maxSum;
+}
+
+// Function to process multiple queries
+function processQueries(queries) {
+  const results = [];
+  for (let query of queries) {
+    const [n, m] = query[0];
+    const a = query[1];
+    results.push(maximumSum(a, m));
+  }
+  return results;
+}
+
+// Sample input processing
+const input = [
+  [
+    [5, 7],
+    [3, 3, 9, 9, 5],
+  ],
+];
+
+console.log(processQueries(input)); // Output: [6]
