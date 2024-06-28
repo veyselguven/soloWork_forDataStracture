@@ -307,3 +307,20 @@ var countLetters = function (S) {
 
   return ans;
 };
+
+var countLetters2 = function (s) {
+  let total = 0,
+    count = 0;
+
+  for (let i in s) {
+    let index = Number(i);
+    if (s[index] === s[index - 1]) {
+      count += 1;
+      total += count;
+    } else {
+      count = 1;
+      total += count;
+    }
+  }
+  return total;
+};
