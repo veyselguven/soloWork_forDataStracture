@@ -286,3 +286,24 @@ var longestCommonPrefix = function (strs) {
   }
   return prefix;
 };
+
+var countLetters = function (S) {
+  const n = S.length;
+  let pre = S[0];
+
+  let ans = 0,
+    curt = 1;
+
+  for (const c of S.slice(1)) {
+    if (c == pre) {
+      curt += 1;
+    } else {
+      ans += (curt * (1 + curt)) / 2;
+      curt = 1;
+      pre = c;
+    }
+  }
+  ans += (curt * (1 + curt)) / 2;
+
+  return ans;
+};
