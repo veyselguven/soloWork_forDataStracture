@@ -63,4 +63,14 @@
 
 // console.log(permute([1, 2, 3]));
 
-console.log("a" < "b");
+// console.log("a" < "b");
+
+// console.log(2 ** 3);
+
+// var global = 2;
+// console.log(global);
+// console.log(typeof "asfas");
+
+let veysel = "happiness";
+
+console.log(veysel.length);

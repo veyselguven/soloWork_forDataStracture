@@ -121,3 +121,33 @@ var uncommonFromSentences2 = function (s1, s2) {
 
   return a;
 };
+
+var findRestaurant = (list1, list2) => {
+  const hashList1 = convertListToObject(list1);
+  const hashList2 = convertListToObject(list2);
+  const stringIndex = {};
+  const res = [];
+  let minIndex = Infinity;
+  for (let i in hashList1) {
+    if (hashList2[i] !== undefined) {
+      stringIndex[i] = hashList1[i] + hashList2[i];
+    }
+  }
+  for (let i in stringIndex) {
+    if (stringIndex[i] < minIndex) {
+      minIndex = stringIndex[i];
+    }
+  }
+  for (let i in stringIndex) {
+    if (stringIndex[i] === minIndex) {
+      res.push(i);
+    }
+  }
+  return res;
+};
+const convertListToObject = (arr) => {
+  return arr.reduce((acc, curr, index) => {
+    acc[curr] = index;
+    return acc;
+  }, {});
+};
