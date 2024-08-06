@@ -37,15 +37,25 @@ console.table(users);
 //   return sum;
 // }
 
-function sumOfDigits(num) {
-  let sum = 0;
-  while (num > 0) {
-    sum += num % 10;
-    num = Math.floor(num / 10);
-  }
-  return sum;
-}
+// function sumOfDigits(num) {
+//     let sum = 0;
+//     while (num > 0) {
+//         sum += num % 10;
+//         num = Math.floor(num / 10);
+//     }
+//     return sum;
+// }
+function sumOfDigits(number) {
+  // Sayıyı pozitif bir tam sayı yapmak için mutlak değeri alıyoruz
+  number = Math.abs(number);
 
+  // Sayıyı stringe çeviriyoruz ve her bir karakteri alıp sayıya çeviriyoruz, ardından topluyoruz
+  return number
+    .toString()
+    .split("")
+    .map(Number)
+    .reduce((sum, digit) => sum + digit, 0);
+}
 function countLargestGroup(n) {
   const groups = {};
 
