@@ -151,3 +151,17 @@ const convertListToObject = (arr) => {
     return acc;
   }, {});
 };
+
+var destCity = function (paths) {
+  const hashmapStart = {};
+  const hashmapEnd = {};
+
+  for (let i = 0; i < paths.length; i++) {
+    hashmapStart[paths[i][0]] = 1;
+    hashmapEnd[paths[i][1]] = 1;
+  }
+  const array = Object.keys(hashmapEnd);
+  for (let i = 0; i < array.length; i++) {
+    if (!hashmapStart[array[i]]) return array[i];
+  }
+};
