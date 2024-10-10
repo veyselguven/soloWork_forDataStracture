@@ -110,22 +110,29 @@
 
 // console.log(updatedBooks(2, "Naber"));
 
+var sortArrayByParityII = function (nums) {
+  const result = [];
+  console.log(result);
+  let even = 0;
+  odd = 1;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] % 2 == 0) {
+      result[even] = nums[i];
+      even += 2;
+    } else {
+      result[odd] = nums[i];
+      odd += 2;
+    }
+  }
+};
+return result;
 
-
-var sortArrayByParityII = function(nums) {
-    const result = [];
-    console.log(result)
-       let even = 0; odd = 1;
-       for(let i = 0; i<nums.length; i++) {
-               if(nums[i] % 2 == 0) {
-                   result[even] = nums[i];
-                     even+=2;
-               }
-               else {
-                   result[odd] = nums[i];
-                   odd+=2;
-               }
-   }
-       
-}
-       return result
+var findNumbers = function (nums) {
+  let result = 0;
+  for (let num of nums) {
+    if (num.toString().split("").join("").length % 2 === 0) {
+      result++;
+    }
+  }
+  return result;
+};
