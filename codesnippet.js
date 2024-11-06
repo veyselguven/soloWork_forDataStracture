@@ -66,6 +66,7 @@ const charactersByName = characters.reduce((acc, curr) => {
 }, 0);
 
 console.log(charactersByName); //52
+
 const runningSum = (nums) => {
   nums.reduce((acc, curr, index, arr) => {
     return (arr[index] += acc);
