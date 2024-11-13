@@ -242,3 +242,36 @@ Output: "chopper is not a tanuki"
 var truncateSentence = function (s, k) {
   return s.split(" ").splice(0, k).join(" ");
 };
+
+var isSumEqual = function (firstWord, secondWord, targetWord) {
+  let ref = {
+    a: 0,
+    b: 1,
+    c: 2,
+    d: 3,
+    e: 4,
+    f: 5,
+    g: 6,
+    h: 7,
+    i: 8,
+    j: 9,
+  };
+  function getValue(str) {
+    let result = "";
+    for (let i = 0; i < str.length; i++) {
+      if (str[i] in ref) {
+        result += ref[str[i]];
+      }
+    }
+    let getNumber = parseInt(result, 10);
+    //   console.log(getNumber);
+    return getNumber;
+  }
+  //  getValue(firstWord)
+  let getFirst = getValue(firstWord);
+  let getSecond = getValue(secondWord);
+  let getTarget = getValue(targetWord);
+
+  if (getFirst + getSecond === getTarget) return true;
+  else return false;
+};
