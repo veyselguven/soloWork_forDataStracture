@@ -146,3 +146,31 @@ var removeElement = function (nums, val) {
   }
   return zeroStartIdx;
 };
+
+var evenOddBit = function (n) {
+  n = n.toString(2);
+  //   console.log(n);
+  let calOne = 0;
+  // console.log(typeof n)
+
+  let value = [];
+
+  for (let i = n.length - 1; i >= 0; i--) {
+    if (Number(n[i]) === 1) {
+      value.push(n.length - 1 - i);
+    }
+  }
+
+  //  console.log(value)
+  let getEven = 0;
+  let getOdd = 0;
+  for (let i = 0; i < value.length; i++) {
+    if (value[i] % 2 === 0) {
+      getEven++;
+    }
+    if (value[i] % 2 === 1) {
+      getOdd++;
+    }
+  }
+  return [getEven, getOdd];
+};
