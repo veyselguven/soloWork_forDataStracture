@@ -97,3 +97,16 @@ var checkIfPangram = function (sentence) {
 //     return acc
 // },{})
 // console.log(getMash)
+
+var checkIfPangram = function (sentence) {
+  let alpha = "abcdefghijklmnopqrstuvwxyz".split("");
+  for (let i = 0; i < alpha.length; i++) {
+    // if(sentence.indexOf(alpha[i]) === -1){
+    //     return false;
+    // }
+    if (!sentence.includes(alpha[i])) {
+      return false;
+    }
+  }
+  return true;
+};
