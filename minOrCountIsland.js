@@ -66,6 +66,7 @@ const explore = (grid, r, c, visited) => {
   explore(grid, r, c + 1, visited);
   return true;
 };
+// One Pass O(n) time, O(1) space
 var isMonotonic = function (nums) {
   let increasing = true;
   let decreasing = true;
@@ -79,3 +80,20 @@ var isMonotonic = function (nums) {
   }
   return increasing || decreasing;
 };
+var checkIfPangram = function (sentence) {
+  let s = new Set();
+  for (let i = 0; i < sentence.length; i++) {
+    s.add(sentence[i]);
+  }
+
+  return s.size === 26;
+};
+// let getMash=sentence.split("").reduce((acc,curr)=>{
+//     if(curr in acc){
+//         acc[curr]++
+//     }else{
+//         acc[curr]=1
+//     }
+//     return acc
+// },{})
+// console.log(getMash)
