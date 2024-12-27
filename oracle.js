@@ -69,3 +69,23 @@ var luckyNumbers = function (matrix) {
   }
   return []; // return empty array
 };
+
+function sortSentence(s) {
+  // Split the sentence into words
+  const words = s.split(" ");
+
+  // Create an array to hold words in the correct order
+  const result = [];
+
+  // Loop through each word
+  for (let word of words) {
+    // Get the position from the last character of the word
+    const position = parseInt(word[word.length - 1]);
+    console.log(position);
+    // Remove the last character (the number) and store it in the correct position
+    result[position - 1] = word.slice(0, -1);
+  }
+
+  // Join the words together to form the sentence
+  return result.join(" ");
+}
