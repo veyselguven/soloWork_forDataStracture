@@ -140,3 +140,23 @@ function minRemoveToMakeValid(s) {
 console.log(minRemoveToMakeValid("lee(t(c)o)de)")); // Output: "lee(t(c)o)de"
 console.log(minRemoveToMakeValid("a)b(c)d")); // Output: "ab(c)d"
 console.log(minRemoveToMakeValid("))((")); // Output: ""
+
+var minRemoveToMakeValid1 = function (s) {
+  const sArray = s.split("");
+  const stack = [];
+
+  for (let i = 0; i < sArray.length; i++) {
+    if (sArray[i] === "(") {
+      stack.push(i);
+    } else if (sArray[i] === ")" && stack.length > 0) {
+      stack.pop();
+    } else if (sArray[i] === ")") {
+      sArray[i] = "";
+    }
+  }
+
+  for (let j = 0; j < stack.length; j++) {
+    sArray[stack[j]] = "";
+  }
+  return sArray.join("");
+};
