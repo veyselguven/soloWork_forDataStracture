@@ -89,3 +89,54 @@ function sortSentence(s) {
   // Join the words together to form the sentence
   return result.join(" ");
 }
+// time O(n), where n is the length of the string, since we only traverse the string twice.
+// space O(n), due to the use of additional arrays (result and finalResult) for intermediate steps.
+function minRemoveToMakeValid(s) {
+  // Step 1: Remove invalid closing parentheses
+  let result = [];
+  let openCount = 0;
+
+  // Traverse the string to remove invalid closing parentheses
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === "(") {
+      openCount++; // Count opening parentheses
+      result.push(s[i]); // Keep the opening parenthesis
+    } else if (s[i] === ")") {
+      if (openCount > 0) {
+        openCount--; // Found a matching '(' for this ')'
+        result.push(s[i]); // Keep the closing parenthesis
+      }
+      // If there's no matching '(' for the ')', we skip it
+    } else {
+      result.push(s[i]); // Keep non-parenthesis characters
+    }
+  }
+
+  // Step 2: Remove unmatched opening parentheses
+  let finalResult = [];
+  let closeCount = 0;
+
+  // Traverse the result array from right to left
+  for (let i = result.length - 1; i >= 0; i--) {
+    if (result[i] === ")") {
+      closeCount++; // Count closing parentheses
+      finalResult.push(result[i]); // Keep the closing parenthesis
+    } else if (result[i] === "(") {
+      if (closeCount > 0) {
+        closeCount--; // Found a matching ')' for this '('
+        finalResult.push(result[i]); // Keep the opening parenthesis
+      }
+      // If there's no matching ')' for the '(', we skip it
+    } else {
+      finalResult.push(result[i]); // Keep non-parenthesis characters
+    }
+  }
+
+  // Reverse finalResult to restore the correct order
+  return finalResult.reverse().join("");
+}
+
+// Example usage:
+console.log(minRemoveToMakeValid("lee(t(c)o)de)")); // Output: "lee(t(c)o)de"
+console.log(minRemoveToMakeValid("a)b(c)d")); // Output: "ab(c)d"
+console.log(minRemoveToMakeValid("))((")); // Output: ""
