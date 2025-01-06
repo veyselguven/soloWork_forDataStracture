@@ -51,3 +51,14 @@ to complete what array is missing since set only contains distinct elements
 it makes life much easer if we know in advance we want to avoid saving
 duplicate data our structure  as we seen before it can easily remove duplicates
 */
+
+var containsNearbyDuplicate = function (nums, k) {
+  const map = new Map();
+  for (let i = 0; i < nums.length; i++) {
+    if (i - map.get(nums[i]) <= k) {
+      return true;
+    }
+    map.set(nums[i], i);
+  }
+  return false;
+};
