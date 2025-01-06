@@ -52,13 +52,32 @@ it makes life much easer if we know in advance we want to avoid saving
 duplicate data our structure  as we seen before it can easily remove duplicates
 */
 
-var containsNearbyDuplicate = function (nums, k) {
-  const map = new Map();
+console.log("--------------------");
+console.log("--------------------");
+console.log("--------------------");
+
+// var containsNearbyDuplicate = function (nums, k) {
+//   //debugger;
+//   const map = new Map();
+//   for (let i = 0; i < nums.length; i++) {
+//     if (i - map.get(nums[i]) <= k) {
+//       return true;
+//     }
+//     map.set(nums[i], i);
+//   }
+//   return false;
+// };
+
+function containsNearbyDuplicate(nums, k) {
+  //  debugger;
+  let set = new Set();
+
   for (let i = 0; i < nums.length; i++) {
-    if (i - map.get(nums[i]) <= k) {
-      return true;
-    }
-    map.set(nums[i], i);
+    if (set.has(nums[i])) return true;
+    set.add(nums[i]);
+    if (set.size > k) set.delete(nums[i - k]);
   }
   return false;
-};
+}
+
+console.log(containsNearbyDuplicate([1, 2, 3, 1], 3));
