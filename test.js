@@ -33,6 +33,7 @@ mySet2.delete("6");
 console.log(mySet2);
 console.log(mySet2.has(5));
 console.log(mySet2.size); //7
+
 /* 
 An array is an ordered list of objects you can acces the elements
 of an array by  referencing its integer position in the list.
@@ -68,16 +69,29 @@ console.log("--------------------");
 //   return false;
 // };
 
-function containsNearbyDuplicate(nums, k) {
-  //  debugger;
-  let set = new Set();
+// function containsNearbyDuplicate(nums, k) {
+//   //  debugger;
+//   let set = new Set();
 
-  for (let i = 0; i < nums.length; i++) {
-    if (set.has(nums[i])) return true;
-    set.add(nums[i]);
-    if (set.size > k) set.delete(nums[i - k]);
-  }
-  return false;
-}
+//   for (let i = 0; i < nums.length; i++) {
+//     if (set.has(nums[i])) return true;
+//     set.add(nums[i]);
+//     if (set.size > k) set.delete(nums[i - k]);
+//   }
+//   return false;
+// }
 
-console.log(containsNearbyDuplicate([1, 2, 3, 1], 3));
+// console.log(containsNearbyDuplicate([1, 2, 3, 1], 3));
+
+const shallow = { a: 1, b: { c: 2 } };
+const copy = { ...shallow };
+
+console.log(copy);
+////////////////////
+///////////////////
+///////////////////
+///////////////////
+///////////////////
+
+// map object holds key value pairs and
+// remembers the original insertion order of the key

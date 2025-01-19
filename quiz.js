@@ -72,3 +72,20 @@ console.log(result);
 grater = "Say Hello";
 console.log(grater);
 var grater;
+
+// 88. Merge Sorted Array
+function merge(nums1, m, nums2, n) {
+  // Step 1: Combine the first m elements of nums1 with all elements of nums2
+  let mergedArray = nums1.slice(0, m).concat(nums2);
+
+  // Step 2: Sort the combined array
+  mergedArray.sort((a, b) => a - b);
+
+  // Step 3: Update nums1 with the sorted values
+  for (let i = 0; i < mergedArray.length; i++) {
+    nums1[i] = mergedArray[i];
+  }
+}
+
+// Time Complexity: O((m+n)log(m+n))due to the sorting step.
+//Space Complexity: O(m+n) because of the temporary mergedArray
