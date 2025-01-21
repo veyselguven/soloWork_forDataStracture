@@ -28,3 +28,33 @@ var maxSubArray = function (nums) {
   }
   return max;
 };
+
+// 121. Best Time to Buy and Sell Stock
+var maxProfit = function (prices) {
+  let buy = prices[0]; //7
+  prices[0] = 0;
+  let profit = 0;
+
+  for (let i = 1; i < prices.length; i++) {
+    if (buy > prices[i]) {
+      buy = prices[i];
+      prices[i] = 0;
+    } else {
+      profit = Math.max(prices[i] - buy, profit);
+    }
+  }
+
+  return profit;
+};
+// var maxProfit = function(prices) {
+//     let max=-Infinity
+//     for(let i=0; i<prices.length; i++){
+//         for(let j=i+1; j<prices.length; j++){
+//             let currentVal=prices[j]-prices[i]
+//             if(prices[i]<prices[j] && (currentVal>max)){
+//                 max=currentVal
+//             }
+//         }
+//     };
+//     return  max > 0 ? max : 0
+// };
