@@ -44,3 +44,22 @@ var generate = function (numRows) {
 
   return pascalTriangle;
 };
+
+var isPalindrome = function (s) {
+  if (s === "") return false;
+  s = s.toLowerCase();
+  s = s.replace(/[^a-z0-9]/g, "");
+  console.log("s=>", s);
+
+  let first = 0;
+  let last = s.length - 1;
+
+  while (first < last) {
+    if (s.charAt(first) !== s.charAt(last)) {
+      return false;
+    }
+    first++;
+    last--;
+  }
+  return true;
+};

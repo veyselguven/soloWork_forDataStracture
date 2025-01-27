@@ -14,7 +14,7 @@ console.log(findMedian([1, 3, 3, 6, 7, 8, 9]));
 console.log(findMedian([1, 2, 3, 4, 5, 6, 8, 9]));
 
 console.log({} == {}); // false
-console.log({} === {}); // false
+//console.log({} === {}); // false
 //This condition will always return 'false'
 //since JavaScript compares objects by reference, not value.
 
@@ -48,12 +48,11 @@ var sumOfTheDigitsOfHarshadNumber = function (x) {
   return x % total === 0 ? total : -1;
 };
 
-
-var countElements = function(arr) {
-    let total=0;
-    for(let i=0; i<arr.length; i++){
-        let current=arr[i];
-        if(arr.includes(current+1)) total++
-    }
-    return total
+var countElements = function (arr) {
+  let total = 0;
+  for (let i = 0; i < arr.length; i++) {
+    let current = arr[i];
+    if (arr.includes(current + 1)) total++;
+  }
+  return total;
 };
