@@ -154,7 +154,7 @@ var findMaxAverage3 = function (nums, k) {
   }
   return averageValue;
 };
-
+//392. Is Subsequence
 var isSubsequence = function (s, t) {
   //"abc", t = "ahbgdc"
   // i          j
