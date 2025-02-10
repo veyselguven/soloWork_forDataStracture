@@ -35,7 +35,7 @@ var twoSum = function (numbers, target) {
       left++;
     }
   }
-  return [-1, -1];
+  // return [-1, -1];
 };
 // var twoSum = function(numbers, target) {
 //     for(let i=0; i<numbers.length; i++){
@@ -46,3 +46,26 @@ var twoSum = function (numbers, target) {
 //         }
 //     }
 // };
+
+function substrings(n) {
+  debugger;
+  const MOD = 1000000007;
+  let totalSum = 0;
+
+  // Tüm alt dizileri oluştur
+  for (let i = 0; i < n.length; i++) {
+    let numStr = "";
+    for (let j = i; j < n.length; j++) {
+      numStr += n[j]; // Yeni bir alt dizi oluştur
+      totalSum = (totalSum + Number(numStr)) % MOD; // Sayıya çevir ve topla
+    }
+  }
+
+  return totalSum;
+}
+
+// Örnek testler
+console.log(substrings("16")); // 23
+console.log(substrings("42")); // 48
+console.log(substrings("123")); // 164
+console.log(substrings("9999")); // 100000
