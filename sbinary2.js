@@ -156,3 +156,27 @@ var increasingBST = function (root) {
   nodes[nodes.length - 1].right = null;
   return nodes[0];
 };
+
+var getMinimumDifference = function (root) {
+  let queue = [root];
+  let getArray = [];
+
+  while (queue.length > 0) {
+    let currentVal = queue.shift();
+    getArray.push(currentVal.val);
+
+    if (currentVal.left) queue.push(currentVal.left);
+    if (currentVal.right) queue.push(currentVal.right);
+  }
+  //console.log(getArray);
+
+  let result = +Infinity;
+
+  for (let i = 0; i < getArray.length; i++) {
+    for (let j = i + 1; j < getArray.length; j++) {
+      let curentDif = Math.abs(getArray[i] - getArray[j]);
+      if (curentDif < result) result = curentDif;
+    }
+  }
+  return result;
+};

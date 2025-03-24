@@ -65,7 +65,15 @@ function substrings(n) {
 }
 
 // Örnek testler
-console.log(substrings("16")); // 23
-console.log(substrings("42")); // 48
-console.log(substrings("123")); // 164
-console.log(substrings("9999")); // 100000
+// console.log(substrings("16")); // 23
+// console.log(substrings("42")); // 48
+// console.log(substrings("123")); // 164
+// console.log(substrings("9999")); // 100000
+
+const array1 = [1, 2, 3, 4, 5];
+
+array1.length = 7;
+
+console.log("array1", array1);
+
+console.log("array1.length", array1.length);
