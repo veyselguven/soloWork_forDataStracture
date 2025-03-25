@@ -70,3 +70,28 @@ var reverseWords = function (s) {
   console.log(stringNoSpace);
   return stringNoSpace.reverse().join(" ");
 };
+
+function reverseWords2(s) {
+  let words = [];
+  let word = "";
+
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] !== " ") {
+      word += s[i];
+    } else if (word.length > 0) {
+      words.push(word);
+      word = "";
+    }
+  }
+  if (word.length > 0) {
+    words.push(word);
+  }
+
+  let reversedStr = "";
+  for (let i = words.length - 1; i >= 0; i--) {
+    reversedStr += words[i];
+    if (i > 0) reversedStr += " ";
+  }
+
+  return reversedStr;
+}
