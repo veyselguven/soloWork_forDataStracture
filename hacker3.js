@@ -56,3 +56,17 @@ var countElements = function (arr) {
   }
   return total;
 };
+
+// 151. Reverse Words in a String Leetcode
+var reverseWords = function (s) {
+  //Time Complexity: O(n)
+  //Space Complexity: O(n)
+  // let alphabet=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+  // s=s.split("")
+  // console.log(s)
+  let stringNoSpace = s.trim().replace(/\s+/g, " "); // Replace multiple spaces with a single space
+  //console.log(stringNoSpace);
+  stringNoSpace = stringNoSpace.split(" ");
+  console.log(stringNoSpace);
+  return stringNoSpace.reverse().join(" ");
+};
