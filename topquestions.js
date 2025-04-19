@@ -77,3 +77,21 @@ array1.length = 7;
 console.log("array1", array1);
 
 console.log("array1.length", array1.length);
+
+var sumOfTheDigitsOfHarshadNumber = function (x) {
+  let stringArray = String(x).split("");
+  let total = stringArray.reduce((acc, curr) => {
+    return acc + Number(curr);
+  }, 0);
+  console.log(total);
+  return x % total === 0 ? total : -1;
+};
+var arrangeCoins = function (n) {
+  if (n <= 0) return 0;
+  for (let j = 0; j <= n; j++) {
+    n = n - j;
+    if (n <= j) {
+      return j;
+    }
+  }
+};
