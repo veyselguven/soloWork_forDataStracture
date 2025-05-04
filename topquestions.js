@@ -95,3 +95,22 @@ var arrangeCoins = function (n) {
     }
   }
 };
+var findDisappearedNumbers = function (nums) {
+  let getLength = nums.length;
+  console.log(getLength);
+  let refArray = [];
+  for (let i = 0; i < getLength; i++) {
+    refArray.push(i + 1);
+  }
+  console.log(refArray);
+  //[ 1, 2, 3, 4, 5, 6, 7, 8]
+  let getResult = [];
+
+  for (let i = 0; i < refArray.length; i++) {
+    if (!nums.includes(refArray[i])) {
+      getResult.push(refArray[i]);
+    }
+  }
+  // console.log(getResult)
+  return getResult;
+};
