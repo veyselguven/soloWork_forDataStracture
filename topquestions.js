@@ -96,7 +96,7 @@ var arrangeCoins = function (n) {
   }
 };
 // q448
-var findDisappearedNumbers = function (nums) {
+var findDisappearedNumbers1 = function (nums) {
   let getLength = nums.length;
   console.log(getLength);
   let refArray = [];
@@ -115,7 +115,7 @@ var findDisappearedNumbers = function (nums) {
   // console.log(getResult)
   return getResult;
 };
-var findDisappearedNumbers = function (nums) {
+var findDisappearedNumbers2 = function (nums) {
   let output = [];
   for (let i = 1; i <= nums.length; i++) {
     if (nums.indexOf(i) < 0) {
@@ -123,4 +123,15 @@ var findDisappearedNumbers = function (nums) {
     }
   }
   return output;
+};
+var findDisappearedNumbers3 = function (nums) {
+  let obj = {};
+  for (let n of nums) {
+    obj[n] = 1;
+  }
+  let arr = [];
+  for (let i = 1; i <= nums.length; i++) {
+    if (!obj[i]) arr.push(i);
+  }
+  return arr;
 };
