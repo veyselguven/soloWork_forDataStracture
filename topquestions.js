@@ -135,3 +135,26 @@ var findDisappearedNumbers3 = function (nums) {
   }
   return arr;
 };
+
+var searchBST = function (root, val) {
+  let cur = root;
+  while (cur) {
+    if (cur.val == val) return cur;
+    else if (cur.val > val) cur = cur.left;
+    else cur = cur.right;
+  }
+  return null;
+};
+var reverseStr = function (s, k) {
+  let res = "";
+  for (let i = 0; i < s.length; i += 2 * k) {
+    let str =
+      s
+        .slice(i, i + k)
+        .split("")
+        .reverse()
+        .join("") + s.slice(i + k, i + k + k);
+    res += str;
+  }
+  return res;
+};
