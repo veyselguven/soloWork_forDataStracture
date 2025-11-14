@@ -64,3 +64,36 @@ console.log("----------");
 //   console.log(item.value);
 //   item = item.next;
 // }
+// 1. Grid'i tek listeye çevir
+let arr = [];
+for (let i = 0; i < m; i++) {
+  for (let j = 0; j < n; j++) {
+    arr.push(grid[i][j]);
+  }
+}
+
+// 2. k kez sağa kaydır
+while (k > 0) {
+  let last = arr[arr.length - 1]; // son elemanı al
+  // tüm elemanları sağa kaydır
+  for (let i = arr.length - 1; i > 0; i--) {
+    arr[i] = arr[i - 1];
+  }
+  arr[0] = last; // sona gelen elemanı başa koy
+  k--;
+}
+
+// 3. Tekrar 2D grid'e çevir
+let result = [];
+let index = 0;
+
+for (let i = 0; i < m; i++) {
+  let row = [];
+  for (let j = 0; j < n; j++) {
+    row.push(arr[index]);
+    index++;
+  }
+  result.push(row);
+}
+
+return result;
