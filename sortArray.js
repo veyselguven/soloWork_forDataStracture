@@ -23,3 +23,29 @@ data.sort((a, b) => {
 });
 
 console.log(data);
+/// solve without sort((a,b)=>a-b) // assending
+function selectionSort(arr) {
+  // Array'i değiştirmemek için kopya al (isteğe bağlı ama iyi alışkanlık)
+  const array = arr.slice();
+
+  // Array'in her elemanı için
+  for (let i = 0; i < array.length; i++) {
+    let minIndex = i;
+
+    // i'den sonraki en küçük elemanı bul
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[j] < array[minIndex]) {
+        minIndex = j;
+      }
+    }
+
+    // En küçük eleman i'de değilse yer değiştir
+    if (minIndex !== i) {
+      let temp = array[i];
+      array[i] = array[minIndex];
+      array[minIndex] = temp;
+    }
+  }
+
+  return array;
+}
