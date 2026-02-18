@@ -155,3 +155,12 @@ var majorityElement = function (nums) {
     }
   }
 };
+
+var maxProductDifference = function (nums) {
+  let sorted = nums.sort((a, b) => a - b);
+  console.log(sorted);
+  let getmin = sorted[0] * sorted[1];
+  let getMax = sorted[sorted.length - 1] * sorted[sorted.length - 2];
+  let result = getMax - getmin;
+  return result;
+};
