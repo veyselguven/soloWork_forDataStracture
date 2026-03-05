@@ -164,3 +164,21 @@ var maxProductDifference = function (nums) {
   let result = getMax - getmin;
   return result;
 };
+
+//2000. Reverse Prefix of Word
+var reversePrefix = function (word, ch) {
+  let findIndex = word.indexOf(ch);
+  if (findIndex < 0) return word;
+  console.log("findIndex=>", findIndex);
+  let result = "";
+  for (let i = 0; i <= findIndex; i++) {
+    result += word[i];
+  }
+  let getReverse = result.split("").reverse().join("");
+  console.log("getReverse=>", getReverse);
+  for (let i = findIndex + 1; i < word.length; i++) {
+    getReverse += word[i];
+  }
+  console.log(getReverse);
+  return getReverse;
+};
