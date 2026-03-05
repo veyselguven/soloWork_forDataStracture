@@ -182,3 +182,25 @@ var reversePrefix = function (word, ch) {
   console.log(getReverse);
   return getReverse;
 };
+
+function reversePrefix2(word, ch) {
+  // find first occurrence of ch
+  let index = word.indexOf(ch);
+
+  // if ch not found
+  if (index === -1) {
+    return word;
+  }
+
+  // take prefix and reverse it
+  let prefix = word
+    .slice(0, index + 1)
+    .split("")
+    .reverse()
+    .join("");
+
+  // take the rest of the string
+  let rest = word.slice(index + 1);
+
+  return prefix + rest;
+}
