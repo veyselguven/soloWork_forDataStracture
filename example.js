@@ -64,3 +64,18 @@ a.add("v");
 // console.log(result);
 
 console.log("3160061789".indexOf("003"));
+
+//2418. Sort the People
+var sortPeople = function (names, heights) {
+  let pairs = [];
+
+  for (let i = 0; i < names.length; i++) {
+    pairs.push([names[i], heights[i]]);
+  }
+  // console.log("pairs=>",pairs)
+  pairs.sort((a, b) => b[1] - a[1]);
+  console.log("pairs2=>", pairs);
+  return pairs.map((a) => {
+    return a[0];
+  });
+};
