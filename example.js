@@ -79,3 +79,35 @@ var sortPeople = function (names, heights) {
     return a[0];
   });
 };
+
+function sortPeople2(names, heights) {
+  let arr = [];
+
+  // pair names with heights
+  for (let i = 0; i < names.length; i++) {
+    arr.push([names[i], heights[i]]);
+  }
+
+  // sort by height descending
+  arr.sort((a, b) => b[1] - a[1]);
+
+  // extract names
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    result.push(arr[i][0]);
+  }
+  return result;
+}
+
+function sortPeople3(names, heights) {
+  return names
+    .map((name, i) => [name, heights[i]])
+    .sort((a, b) => b[1] - a[1])
+    .map((person) => person[0]);
+}
+
+/* 
+map → pair values
+sort → order them
+map → extract what you need
+ */
