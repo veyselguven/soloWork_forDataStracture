@@ -111,3 +111,14 @@ map → pair values
 sort → order them
 map → extract what you need
  */
+// 2427. Number of Common Factors
+var commonFactors = function (a, b) {
+  let getMin = Math.min(a, b);
+  let result = [];
+  for (let i = 0; i <= getMin; i++) {
+    if (a % i == 0 && b % i == 0) {
+      result.push(i);
+    }
+  }
+  return result.length;
+};
